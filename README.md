@@ -2,11 +2,11 @@
 
 **给一张照片，让 Agent 把它设计成海报。** 保留照片中的你、物品和风景，用纸张、文字与印刷质感重新编排。
 
-![摄影剪贴拼贴：人物、产品与风景三张真实成品](examples/showcase.jpg)
+![摄影剪贴拼贴：固定十张测试成品总览](examples/contact-sheet.jpg)
 
 首个风格 **摄影剪贴拼贴** · 原片主体保真 · PNG + 可重合成素材包 · 基础流程无需生图密钥
 
-*实验版本。上图选自当前 skill 的真实输出，仅重新编排展示；完整十张测试及被拒绝的中间结果均保留在[实验报告](benchmark/REPORT.md)。*
+*实验版本。上图为固定十张测试的真实成品，保持原样展示；完整测试及被拒绝的中间结果均保留在[实验报告](benchmark/REPORT.md)。*
 
 [安装与使用](#用户怎么用) · [完整案例](benchmark/REPORT.md) · [版本记录](CHANGELOG.md) · [贡献风格](CONTRIBUTING.md) · [English](README.en.md)
 

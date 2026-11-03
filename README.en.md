@@ -4,9 +4,9 @@
 
 Experimental visual skills for agents. Give your agent a photograph and get a paper collage poster while preserving the original photographic subject. Each style lives in a separately installable directory under `skills/`.
 
-![Three actual outputs: portrait, object and landscape](examples/showcase.jpg)
+![All ten actual outputs from the fixed benchmark](examples/contact-sheet.jpg)
 
-*Selected actual outputs, arranged for presentation without retouching the posters. [All ten cases and rejected attempts](benchmark/REPORT.md) remain available.*
+*All ten outputs from the fixed benchmark, shown unchanged. [All ten cases and rejected attempts](benchmark/REPORT.md) remain available.*
 
 ## First style: Photo Paper Collage
 
