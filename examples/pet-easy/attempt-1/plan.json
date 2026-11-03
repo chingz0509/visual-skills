@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "pet",
+  "title": [
+    "今天",
+    "负责可爱"
+  ],
+  "subtitle": "把小小的快乐贴起来",
+  "palette": "lagoon",
+  "layout": "editorial",
+  "photo_mode": "whole",
+  "tone": "color",
+  "seed": 109,
+  "design_reason": "视觉检查发现细毛/脚边保留不足；第一次修复使用完整原片的多层纸张拼贴，保留所有原有细节与关系。",
+  "motif": "LITTLE / HAPPY THINGS",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

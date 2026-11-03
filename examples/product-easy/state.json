@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "created_at": "2026-11-02T16:20:14.453447+00:00",
+  "source": "original.jpg",
+  "source_sha256": "25552e9f62e07f49bc5288418af9cb53be875101032e8e61457b3e1649b5f24a",
+  "category": "product",
+  "attempts": [
+    {
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    }
+  ],
+  "status": "complex_pass",
+  "human_acceptance": "pending",
+  "accepted_bundle": "attempt-0"
+}

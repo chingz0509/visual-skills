@@ -1,0 +1,12 @@
+{
+  "mask": {
+    "requested": "cutout",
+    "used": "cutout",
+    "coverage": 0.1417982135807343,
+    "engine": "Apple Vision local foreground instances",
+    "warning": "Mask completeness requires side-by-side visual review; coverage is not a fidelity proof."
+  },
+  "tone": "color",
+  "rgb_matches_allowed_transform": true,
+  "generative_subject_edit": false
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "摄影剪贴拼贴"
+  short_description: "保留原照片主体，自动设计纸张拼贴海报，输出 PNG 与可复现素材包"
+  default_prompt: "用 $photo-paper-collage 把这张照片做成摄影剪贴拼贴海报，自动选择中文标题、配色和布局。"

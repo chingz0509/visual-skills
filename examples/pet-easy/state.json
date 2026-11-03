@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "created_at": "2026-11-02T16:20:16.929309+00:00",
+  "source": "original.jpg",
+  "source_sha256": "e88816218c940d15febb978b231b60ab047154a138c6d2cf065e44fe654ca223",
+  "category": "pet",
+  "attempts": [
+    {
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "rejected",
+      "hard_pass": true
+    },
+    {
+      "index": 1,
+      "layout": "editorial",
+      "photo_mode": "whole",
+      "bundle": "attempt-1",
+      "status": "passed",
+      "hard_pass": true
+    }
+  ],
+  "status": "complex_pass",
+  "human_acceptance": "pending",
+  "accepted_bundle": "attempt-1"
+}

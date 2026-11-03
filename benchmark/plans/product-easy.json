@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "product",
+  "title": [
+    "把光",
+    "留在手里"
+  ],
+  "subtitle": "每一帧都值得珍藏",
+  "palette": "archive",
+  "layout": "cutout",
+  "photo_mode": "cutout",
+  "tone": "color",
+  "seed": 107,
+  "design_reason": "相机和镜头作为完整产品保留，白背景适合抠图，橙色纸块与黄纸条提供节奏。",
+  "motif": "KEEP / LOOKING",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

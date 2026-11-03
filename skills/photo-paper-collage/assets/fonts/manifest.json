@@ -1,0 +1,20 @@
+[
+  {
+    "file": "NotoSansSC[wght].ttf",
+    "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "license": "notosanssc-OFL.txt",
+    "license_id": "SIL OFL 1.1",
+    "downloaded_on": "2026-11-03",
+    "modified": false
+  },
+  {
+    "file": "BebasNeue-Regular.ttf",
+    "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+    "source": "https://github.com/google/fonts/tree/main/ofl/bebasneue",
+    "license": "bebasneue-OFL.txt",
+    "license_id": "SIL OFL 1.1",
+    "downloaded_on": "2026-11-03",
+    "modified": false
+  }
+]

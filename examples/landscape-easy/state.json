@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "created_at": "2026-11-02T16:20:19.624744+00:00",
+  "source": "original.jpg",
+  "source_sha256": "8c2ca0a88856f5c5ecbd15506a0d9e5a4ccbdaea467339ece97aab00385ed014",
+  "category": "landscape",
+  "attempts": [
+    {
+      "index": 0,
+      "layout": "landscape",
+      "photo_mode": "whole",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    }
+  ],
+  "status": "complex_pass",
+  "human_acceptance": "pending",
+  "accepted_bundle": "attempt-0"
+}

@@ -1,0 +1,10 @@
+{
+  "reviewer": "Codex primary agent, visual comparison with frozen source",
+  "subject_fidelity": true,
+  "edge_integrity": true,
+  "text_correct": true,
+  "style_coherent": true,
+  "composition_usable": true,
+  "notes": "面部、表情、衬衫图案保持原片；卷发主体保留，边缘少量透明细丝弱化，没有明显破洞。中文准确，照片与两层纸张形成清楚层次。",
+  "human_final_acceptance": "pending"
+}

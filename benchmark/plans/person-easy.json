@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "person",
+  "title": [
+    "把今天",
+    "贴成喜欢的样子"
+  ],
+  "subtitle": "做自己的封面人物",
+  "palette": "lilac",
+  "layout": "cutout",
+  "photo_mode": "cutout",
+  "tone": "mono",
+  "seed": 103,
+  "design_reason": "干净背景的人像适合保留原面容、黑白剪贴；紫色与橙色纸层呼应编辑式拼贴。",
+  "motif": "A LITTLE / DAYDREAM",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

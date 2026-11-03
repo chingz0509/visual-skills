@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "landscape",
+  "title": [
+    "把远方",
+    "寄给自己"
+  ],
+  "subtitle": "山湖之间，留一点空白",
+  "palette": "archive",
+  "layout": "landscape",
+  "photo_mode": "whole",
+  "tone": "color",
+  "seed": 111,
+  "design_reason": "横向湖山完整放入纵版；用纸张、网格和标题构成层次，不重组山湖。",
+  "motif": "A PLACE / TO REMEMBER",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

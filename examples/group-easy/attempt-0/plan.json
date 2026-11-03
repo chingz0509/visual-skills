@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "group",
+  "title": [
+    "一起",
+    "就在这一刻"
+  ],
+  "subtitle": "每个人都在画面里",
+  "palette": "archive",
+  "layout": "editorial",
+  "photo_mode": "whole",
+  "tone": "mono",
+  "seed": 105,
+  "design_reason": "七人原合照作为整体保留，宽幅照片配纸层与大字；原本出框边缘不进一步裁切。",
+  "motif": "BETTER / TOGETHER",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "product",
+  "title": [
+    "慢一点",
+    "感受时间"
+  ],
+  "subtitle": "让时间有自己的节奏",
+  "palette": "lilac",
+  "layout": "cutout",
+  "photo_mode": "cutout",
+  "tone": "color",
+  "seed": 108,
+  "design_reason": "复杂背景中的反光表链与细字是硬例，需重点核对表链与盘面，失败后整图修复。",
+  "motif": "TAKE / YOUR TIME",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

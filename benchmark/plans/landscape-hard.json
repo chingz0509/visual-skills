@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "landscape",
+  "title": [
+    "走进",
+    "安静的深处"
+  ],
+  "subtitle": "让脚步慢下来",
+  "palette": "forest",
+  "layout": "landscape",
+  "photo_mode": "whole",
+  "tone": "color",
+  "seed": 112,
+  "design_reason": "深色竖幅密林完整保留，以暖纸底和黄色点缀提供对比，避免加重黑位。",
+  "motif": "INTO / THE QUIET",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

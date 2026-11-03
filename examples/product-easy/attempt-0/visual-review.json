@@ -1,0 +1,10 @@
+{
+  "reviewer": "Codex primary agent, visual comparison with frozen source",
+  "subject_fidelity": true,
+  "edge_integrity": true,
+  "text_correct": true,
+  "style_coherent": true,
+  "composition_usable": true,
+  "notes": "相机外壳、镜头、机身拨盘与标识都来自原片，轮廓无明显破损。中文标题和副标题完整；没有生成产品细节。",
+  "human_final_acceptance": "pending"
+}

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "created_at": "2026-11-02T16:20:09.877279+00:00",
+  "source": "original.jpg",
+  "source_sha256": "4e767560703a4ad48103a0d6604225dd95d4ab6bf35ce534188097100767acc6",
+  "category": "person",
+  "attempts": [
+    {
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    }
+  ],
+  "status": "complex_pass",
+  "human_acceptance": "pending",
+  "accepted_bundle": "attempt-0"
+}

@@ -1,0 +1,10 @@
+{
+  "reviewer": "Codex primary agent, visual comparison with frozen source",
+  "subject_fidelity": true,
+  "edge_integrity": true,
+  "text_correct": true,
+  "style_coherent": true,
+  "composition_usable": true,
+  "notes": "竖幅暗森林完整嵌入，树干及路径关系未变；深色原片未再压暗。标题副标题准确，暖色纸边与深绿形成对比。",
+  "human_final_acceptance": "pending"
+}

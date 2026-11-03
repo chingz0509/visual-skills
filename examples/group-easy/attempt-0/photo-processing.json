@@ -1,0 +1,10 @@
+{
+  "mask": {
+    "requested": "whole",
+    "used": "whole",
+    "warning": null
+  },
+  "tone": "mono",
+  "rgb_matches_allowed_transform": true,
+  "generative_subject_edit": false
+}

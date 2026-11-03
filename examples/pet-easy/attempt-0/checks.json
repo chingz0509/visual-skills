@@ -1,0 +1,90 @@
+{
+  "all_hard_checks_pass": true,
+  "checks": [
+    {
+      "name": "text_eyebrow_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "text_eyebrow_readable_size",
+      "pass": true,
+      "font_size": 33,
+      "text": "PAPER / MOMENTS"
+    },
+    {
+      "name": "text_edition_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "text_edition_readable_size",
+      "pass": true,
+      "font_size": 28,
+      "text": "A MOMENT, KEPT"
+    },
+    {
+      "name": "text_title_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "title_readable_size",
+      "pass": true,
+      "font_size": 99,
+      "text": "今天"
+    },
+    {
+      "name": "text_title_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "title_readable_size",
+      "pass": true,
+      "font_size": 100,
+      "text": "负责可爱"
+    },
+    {
+      "name": "text_motif_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "text_motif_readable_size",
+      "pass": true,
+      "font_size": 84,
+      "text": "LITTLE / HAPPY THINGS"
+    },
+    {
+      "name": "photo_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "text_subtitle_inside_canvas",
+      "pass": true
+    },
+    {
+      "name": "text_subtitle_readable_size",
+      "pass": true,
+      "font_size": 52,
+      "text": "把小小的快乐贴起来"
+    },
+    {
+      "name": "source_rgb_matches_allowed_transform",
+      "pass": true
+    },
+    {
+      "name": "source_not_regenerated",
+      "pass": true,
+      "evidence": "Local RGB source -> optional grayscale -> alpha mask -> similarity transforms only"
+    },
+    {
+      "name": "group_landscape_whole",
+      "pass": true
+    },
+    {
+      "name": "png_3_4",
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "Mask completeness, semantic correctness, readable rendered glyphs, aesthetics and subject occlusion require Agent visual review.",
+    "Source RGB checks establish allowed processing, not complete preservation of the alpha-masked subject."
+  ]
+}

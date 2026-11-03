@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "created_at": "2026-11-02T16:20:12.831623+00:00",
+  "source": "original.jpg",
+  "source_sha256": "61f162b71d8b97b949948134d396614512339428ccf90a1b084b66a16f0a79ce",
+  "category": "group",
+  "attempts": [
+    {
+      "index": 0,
+      "layout": "editorial",
+      "photo_mode": "whole",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    }
+  ],
+  "status": "complex_pass",
+  "human_acceptance": "pending",
+  "accepted_bundle": "attempt-0"
+}

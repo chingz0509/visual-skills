@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "person",
+  "title": [
+    "笑容",
+    "自带光芒"
+  ],
+  "subtitle": "把平常的瞬间认真收藏",
+  "palette": "lagoon",
+  "layout": "cutout",
+  "photo_mode": "cutout",
+  "tone": "color",
+  "seed": 104,
+  "design_reason": "散发与花纹衣物是抠图难点；先检查原像素剪贴，底部保留衣物和姿态。",
+  "motif": "GOOD / LITTLE DAYS",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

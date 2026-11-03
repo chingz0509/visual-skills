@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-03",
+  "skill_validation": "passed",
+  "behavior_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "fixed_photos": 10,
+  "first_attempt_agent_pass": 8,
+  "first_repair_agent_pass": 2,
+  "final_agent_complex_pass": 10,
+  "final_agent_simple_pass": 0,
+  "final_agent_fail": 0,
+  "human_acceptance": "pending",
+  "replay_pixel_identical": 10,
+  "installed_skill_smoke": "passed, pixel-identical to reviewed output",
+  "fresh_machine_dependency_install": "not tested",
+  "optional_image_generation": "not implemented; baseline does not call image generation",
+  "platform": "Codex desktop, Apple Silicon macOS 26.6.1"
+}

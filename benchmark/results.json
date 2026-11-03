@@ -1,0 +1,197 @@
+{
+  "run": "eval-01",
+  "experimental": true,
+  "human_final_acceptance": "pending",
+  "results": [
+    {
+      "id": "person-easy",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "person-hard",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "group-easy",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "group-hard",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "product-easy",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "product-hard",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "pet-easy",
+      "first": "rejected",
+      "final": "complex_pass",
+      "attempts": 2,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "pet-hard",
+      "first": "rejected",
+      "final": "complex_pass",
+      "attempts": 2,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "landscape-easy",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    },
+    {
+      "id": "landscape-hard",
+      "first": "passed",
+      "final": "complex_pass",
+      "attempts": 1,
+      "replay_identical": true,
+      "human_acceptance": "pending"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "person-easy",
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "person-hard",
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "group-easy",
+      "index": 0,
+      "layout": "editorial",
+      "photo_mode": "whole",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "group-hard",
+      "index": 0,
+      "layout": "editorial",
+      "photo_mode": "whole",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "product-easy",
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "product-hard",
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "pet-easy",
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "rejected",
+      "hard_pass": true
+    },
+    {
+      "id": "pet-easy",
+      "index": 1,
+      "layout": "editorial",
+      "photo_mode": "whole",
+      "bundle": "attempt-1",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "pet-hard",
+      "index": 0,
+      "layout": "cutout",
+      "photo_mode": "cutout",
+      "bundle": "attempt-0",
+      "status": "rejected",
+      "hard_pass": true
+    },
+    {
+      "id": "pet-hard",
+      "index": 1,
+      "layout": "editorial",
+      "photo_mode": "whole",
+      "bundle": "attempt-1",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "landscape-easy",
+      "index": 0,
+      "layout": "landscape",
+      "photo_mode": "whole",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    },
+    {
+      "id": "landscape-hard",
+      "index": 0,
+      "layout": "landscape",
+      "photo_mode": "whole",
+      "bundle": "attempt-0",
+      "status": "passed",
+      "hard_pass": true
+    }
+  ]
+}

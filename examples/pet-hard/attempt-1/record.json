@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "canvas": [
+    1200,
+    1600
+  ],
+  "layers": [
+    {
+      "file": "assets/00-background.png",
+      "x": 0,
+      "y": 0,
+      "role": "background",
+      "size": [
+        1200,
+        1600
+      ]
+    },
+    {
+      "file": "assets/01-text_eyebrow.png",
+      "x": 143,
+      "y": 38,
+      "role": "text_eyebrow",
+      "size": [
+        194,
+        36
+      ]
+    },
+    {
+      "file": "assets/02-text_edition.png",
+      "x": 889,
+      "y": 38,
+      "role": "text_edition",
+      "size": [
+        148,
+        36
+      ]
+    },
+    {
+      "file": "assets/03-text_title.png",
+      "x": 460,
+      "y": 109,
+      "role": "text_title",
+      "size": [
+        236,
+        122
+      ]
+    },
+    {
+      "file": "assets/04-text_title.png",
+      "x": 376,
+      "y": 239,
+      "role": "text_title",
+      "size": [
+        452,
+        122
+      ]
+    },
+    {
+      "file": "assets/05-backing_color_shadow.png",
+      "x": 38,
+      "y": 454,
+      "role": "backing_color_shadow",
+      "size": [
+        1140,
+        856
+      ]
+    },
+    {
+      "file": "assets/06-backing_color.png",
+      "x": 50,
+      "y": 462,
+      "role": "backing_color",
+      "size": [
+        1110,
+        826
+      ]
+    },
+    {
+      "file": "assets/07-backing_grid_shadow.png",
+      "x": 11,
+      "y": 439,
+      "role": "backing_grid_shadow",
+      "size": [
+        1134,
+        902
+      ]
+    },
+    {
+      "file": "assets/08-backing_grid.png",
+      "x": 23,
+      "y": 447,
+      "role": "backing_grid",
+      "size": [
+        1104,
+        872
+      ]
+    },
+    {
+      "file": "assets/09-text_motif.png",
+      "x": 196,
+      "y": 404,
+      "role": "text_motif",
+      "size": [
+        779,
+        115
+      ]
+    },
+    {
+      "file": "assets/10-photo_shadow.png",
+      "x": 118,
+      "y": 528,
+      "role": "photo_shadow",
+      "size": [
+        971,
+        768
+      ]
+    },
+    {
+      "file": "assets/11-photo.png",
+      "x": 130,
+      "y": 536,
+      "role": "photo",
+      "size": [
+        941,
+        738
+      ]
+    },
+    {
+      "file": "assets/12-tape.png",
+      "x": 158,
+      "y": 493,
+      "role": "tape",
+      "size": [
+        183,
+        104
+      ]
+    },
+    {
+      "file": "assets/13-tape.png",
+      "x": 880,
+      "y": 1184,
+      "role": "tape",
+      "size": [
+        183,
+        96
+      ]
+    },
+    {
+      "file": "assets/14-caption_strip_shadow.png",
+      "x": 111,
+      "y": 1315,
+      "role": "caption_strip_shadow",
+      "size": [
+        984,
+        184
+      ]
+    },
+    {
+      "file": "assets/15-caption_strip.png",
+      "x": 123,
+      "y": 1323,
+      "role": "caption_strip",
+      "size": [
+        954,
+        154
+      ]
+    },
+    {
+      "file": "assets/16-text_subtitle.png",
+      "x": 445,
+      "y": 1364,
+      "role": "text_subtitle",
+      "size": [
+        310,
+        73
+      ]
+    },
+    {
+      "file": "assets/17-print_grain.png",
+      "x": 0,
+      "y": 0,
+      "role": "print_grain",
+      "size": [
+        1200,
+        1600
+      ]
+    }
+  ],
+  "files": {
+    "final.png": "19fd37013b37c3b75d25ab567cca609c1821a7e1cc87b0cdda352f934ce4fbab",
+    "plan.json": "c4385cb51f30d28806f13074801bca262dd46ce7c559bbebf36a037263433062",
+    "source.json": "f4f08cd85a4001c7fa1f5f09b8f33dc437feb026338a09f7959702e2d5744a56",
+    "renderer.py": "f882489c5790191f6a447776fb2b7bf38184d1aa12eee72ee286495f33f37be0",
+    "source-original.jpg": "b83dcfe764bd00ece3638ef733c40572eaab92f53065cb314d6fceca5f9176d4",
+    "photo-processing.json": "aa32eff528824efa4cf1501609ab4afad0c50303bcfe7a02a565e05f5a5a90ad",
+    "replay.py": "15790b13c3da2d79f87f06e3f0a587b65429e62b12e5ad744297313600345ad3",
+    "source-normalized.png": "8d0086bcc0da2d2d276212d8f5201be3d3b7bc59ceb5bc40ff9a72f4f6d00edf",
+    "photo-prepared.png": "79dfb5b44bb8139d5c4605227e184495521516aa0d53606119de687103b4167b",
+    "fonts/bebasneue-OFL.txt": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+    "fonts/notosanssc-OFL.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+    "fonts/BebasNeue-Regular.ttf": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+    "fonts/NotoSansSC[wght].ttf": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "assets/17-print_grain.png": "971a276baac710057cd2b315c282fcdac1841a81efd36f73dc0cfde6db72325c",
+    "assets/16-text_subtitle.png": "463c3e3d6a37b2ef7fdcd1e88604b55a63c12c9db1bb5ff4dfdaa9de8920ae23",
+    "assets/10-photo_shadow.png": "4e1eff8fcfcc4b0b534138c430b99dd4036d9d9e059c6004da87a1f491ae02c5",
+    "assets/06-backing_color.png": "22207c64ac2985d520c6d78885ff95f1835734a1b0bf44477b37ace40d39b959",
+    "assets/07-backing_grid_shadow.png": "0802f7fcf61f5e4930e567da4b0d49c31aa26ae6ff3fda7cf3bdcf4a8ad37bf2",
+    "assets/05-backing_color_shadow.png": "9b05ea69d3fd3d15aa9535bc76f67f3cac7bbdaa937febcd6fb7453a6c54db74",
+    "assets/15-caption_strip.png": "51da02d2b968e083519f5bb36477d412dd7f2c4872def7dc5b0ed5d81f042ed9",
+    "assets/14-caption_strip_shadow.png": "2e245e19501818975469dd805d16b27d244bbd2a448dff2c3710a113b6e6b0bd",
+    "assets/11-photo.png": "b3baafc41951e918d8f4c3d838b3382bde2f647258acd1e265cd1e152f11e1e9",
+    "assets/09-text_motif.png": "a82e2dbd5759f842a4d0875b69cca50c51f2c5a10b7e992a55d04c1abbe17b51",
+    "assets/02-text_edition.png": "9cf6d9db845ad45ad5d86b9402fff8a7393fea98cdf10cfe534b2f296cc10c39",
+    "assets/00-background.png": "b6fd52a4f98574aef48e6f6e04dd3e7fa04408e2f69116d76644265d58f40108",
+    "assets/08-backing_grid.png": "11663cbe37cd964aaccd2ecd415f5467be25ab60c7476c9e2651bae7f3261748",
+    "assets/01-text_eyebrow.png": "3592a66a8a3b8db3122455793cee35b92535c2e252d7611e09a057853f723cef",
+    "assets/12-tape.png": "4496ead5a58e6a55d742fe515635109f933af1fd6e7b175865db891e488ba0d9",
+    "assets/13-tape.png": "a388aea1f212dd84415e77ae28d12cf5283d04f0007bc48d6780b15c6bd0d793",
+    "assets/04-text_title.png": "766aad5b03e20ead620cd704c15a71acd4ec1f28c067f5b87ca783dc420856ec",
+    "assets/03-text_title.png": "41daab8b8002b11fed27ee3e7cfa0154642bcf736dff230f2af8ebe0af8eb3ff"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pillow": "12.3.0",
+    "numpy": "2.3.5",
+    "platform": "macOS-26.6.1-arm64-arm-64bit"
+  },
+  "mask": {
+    "requested": "whole",
+    "used": "whole",
+    "warning": null
+  },
+  "photo_boxes": [
+    [
+      130,
+      536,
+      1071,
+      1274
+    ]
+  ],
+  "text_boxes": [
+    [
+      143,
+      38,
+      337,
+      74
+    ],
+    [
+      889,
+      38,
+      1037,
+      74
+    ],
+    [
+      460,
+      109,
+      696,
+      231
+    ],
+    [
+      376,
+      239,
+      828,
+      361
+    ],
+    [
+      196,
+      404,
+      975,
+      519
+    ],
+    [
+      445,
+      1364,
+      755,
+      1437
+    ]
+  ],
+  "requires_visual_review": [
+    "subject_fidelity",
+    "edge_integrity",
+    "text_correct",
+    "style_coherent",
+    "composition_usable"
+  ]
+}

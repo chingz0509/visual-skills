@@ -1,0 +1,344 @@
+{
+  "version": 1,
+  "canvas": [
+    1200,
+    1600
+  ],
+  "layers": [
+    {
+      "file": "assets/00-background.png",
+      "x": 0,
+      "y": 0,
+      "role": "background",
+      "size": [
+        1200,
+        1600
+      ]
+    },
+    {
+      "file": "assets/01-text_eyebrow.png",
+      "x": 143,
+      "y": 38,
+      "role": "text_eyebrow",
+      "size": [
+        194,
+        36
+      ]
+    },
+    {
+      "file": "assets/02-text_edition.png",
+      "x": 889,
+      "y": 38,
+      "role": "text_edition",
+      "size": [
+        148,
+        36
+      ]
+    },
+    {
+      "file": "assets/03-headline_paper_shadow.png",
+      "x": 440,
+      "y": 97,
+      "role": "headline_paper_shadow",
+      "size": [
+        282,
+        174
+      ]
+    },
+    {
+      "file": "assets/04-headline_paper.png",
+      "x": 452,
+      "y": 105,
+      "role": "headline_paper",
+      "size": [
+        252,
+        144
+      ]
+    },
+    {
+      "file": "assets/05-text_title.png",
+      "x": 472,
+      "y": 119,
+      "role": "text_title",
+      "size": [
+        212,
+        116
+      ]
+    },
+    {
+      "file": "assets/06-headline_paper_shadow.png",
+      "x": 371,
+      "y": 226,
+      "role": "headline_paper_shadow",
+      "size": [
+        468,
+        176
+      ]
+    },
+    {
+      "file": "assets/07-headline_paper.png",
+      "x": 383,
+      "y": 234,
+      "role": "headline_paper",
+      "size": [
+        438,
+        146
+      ]
+    },
+    {
+      "file": "assets/08-text_title.png",
+      "x": 402,
+      "y": 247,
+      "role": "text_title",
+      "size": [
+        400,
+        120
+      ]
+    },
+    {
+      "file": "assets/09-backing_grid_shadow.png",
+      "x": 181,
+      "y": 420,
+      "role": "backing_grid_shadow",
+      "size": [
+        822,
+        905
+      ]
+    },
+    {
+      "file": "assets/10-backing_grid.png",
+      "x": 193,
+      "y": 428,
+      "role": "backing_grid",
+      "size": [
+        792,
+        875
+      ]
+    },
+    {
+      "file": "assets/11-backing_color_shadow.png",
+      "x": 207,
+      "y": 560,
+      "role": "backing_color_shadow",
+      "size": [
+        836,
+        776
+      ]
+    },
+    {
+      "file": "assets/12-backing_color.png",
+      "x": 219,
+      "y": 568,
+      "role": "backing_color",
+      "size": [
+        806,
+        746
+      ]
+    },
+    {
+      "file": "assets/13-text_motif.png",
+      "x": 284,
+      "y": 502,
+      "role": "text_motif",
+      "size": [
+        605,
+        165
+      ]
+    },
+    {
+      "file": "assets/14-botanical.png",
+      "x": 38,
+      "y": 964,
+      "role": "botanical",
+      "size": [
+        234,
+        342
+      ]
+    },
+    {
+      "file": "assets/15-star.png",
+      "x": 972,
+      "y": 606,
+      "role": "star",
+      "size": [
+        130,
+        130
+      ]
+    },
+    {
+      "file": "assets/16-photo_shadow.png",
+      "x": 144,
+      "y": 460,
+      "role": "photo_shadow",
+      "size": [
+        933,
+        878
+      ]
+    },
+    {
+      "file": "assets/17-photo.png",
+      "x": 156,
+      "y": 468,
+      "role": "photo",
+      "size": [
+        903,
+        848
+      ]
+    },
+    {
+      "file": "assets/18-caption_strip_shadow.png",
+      "x": 71,
+      "y": 1342,
+      "role": "caption_strip_shadow",
+      "size": [
+        1064,
+        189
+      ]
+    },
+    {
+      "file": "assets/19-caption_strip.png",
+      "x": 83,
+      "y": 1350,
+      "role": "caption_strip",
+      "size": [
+        1034,
+        159
+      ]
+    },
+    {
+      "file": "assets/20-text_subtitle.png",
+      "x": 438,
+      "y": 1392,
+      "role": "text_subtitle",
+      "size": [
+        324,
+        76
+      ]
+    },
+    {
+      "file": "assets/21-star.png",
+      "x": 63,
+      "y": 508,
+      "role": "star",
+      "size": [
+        84,
+        84
+      ]
+    },
+    {
+      "file": "assets/22-print_grain.png",
+      "x": 0,
+      "y": 0,
+      "role": "print_grain",
+      "size": [
+        1200,
+        1600
+      ]
+    }
+  ],
+  "files": {
+    "final.png": "56517aca0fa76e452a9246d32057f46b878dd6386f88540a59424f7e3cf9133b",
+    "plan.json": "787a02cebc0a7fcf89523cccccf94be9e4442d9cdddccd2ee4d8e37cf8b5fc83",
+    "source.json": "f4f08cd85a4001c7fa1f5f09b8f33dc437feb026338a09f7959702e2d5744a56",
+    "renderer.py": "f882489c5790191f6a447776fb2b7bf38184d1aa12eee72ee286495f33f37be0",
+    "source-original.jpg": "b83dcfe764bd00ece3638ef733c40572eaab92f53065cb314d6fceca5f9176d4",
+    "photo-processing.json": "449eab5253cb72df02dc054e7f86f5ea5981845b03c8c6936fac5d0f7d713e3f",
+    "replay.py": "15790b13c3da2d79f87f06e3f0a587b65429e62b12e5ad744297313600345ad3",
+    "source-normalized.png": "8d0086bcc0da2d2d276212d8f5201be3d3b7bc59ceb5bc40ff9a72f4f6d00edf",
+    "photo-prepared.png": "e2397fac08170baf9da703745e4eec3b41b2df962ba52ada39e1f1f83e6be035",
+    "mask.png": "20488dcb61110e169368eb999345ebbaa7249b72b0c8d1a50020a379ceb125f5",
+    "fonts/bebasneue-OFL.txt": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341",
+    "fonts/notosanssc-OFL.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+    "fonts/BebasNeue-Regular.ttf": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+    "fonts/NotoSansSC[wght].ttf": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "assets/15-star.png": "51a252d12c308d3ef35ac94bee9023653a0051e9fb79b0da8b3f48b18bc2697f",
+    "assets/21-star.png": "5f84e23af6313a6856644b52a3d69c24e04cda04f7f7ce037f29ae1270a69e40",
+    "assets/22-print_grain.png": "971a276baac710057cd2b315c282fcdac1841a81efd36f73dc0cfde6db72325c",
+    "assets/20-text_subtitle.png": "9b1547592f47245daf3e24ec375b3e426d1c4a4b6ac00f7c6bfc6f9fe436f6fb",
+    "assets/17-photo.png": "62e04bb77ba24f6d02e26e9deec3275f5d05a8ea4fbd3cb2adc5559dc4c4fac0",
+    "assets/04-headline_paper.png": "07681bee4675cb88c6b2f8146022f91c71b65115b0053f9820da5e4603e7dc37",
+    "assets/10-backing_grid.png": "a63ad18e34a812d49614cbafdeddc24768f97d15e003a48624a678c063ec6e54",
+    "assets/07-headline_paper.png": "ddfaeb1897ad55207a2d4d4e2373d8e28dd80b13520ac248ed7ee0ab973b26b3",
+    "assets/18-caption_strip_shadow.png": "d96486c6bfc3bbcc111dd264277337ad92337a8fe7e274e6627db510eabc619f",
+    "assets/09-backing_grid_shadow.png": "659059b458c3cc059698829afaeb4b1846eee2ccfd33a0f818e51e88af552bc3",
+    "assets/06-headline_paper_shadow.png": "3b409149aefd6cfe2c6ceb21604150ee8560472c21d3187e597e19321267148b",
+    "assets/13-text_motif.png": "9003c4359b19af751349f2574c18d2b87599f378e031568ee0dc83a48cfbbc30",
+    "assets/19-caption_strip.png": "cf0696b94a46da7a2ec66cfd6b932ac40db9a290428611b213455e5998074f64",
+    "assets/02-text_edition.png": "9cf6d9db845ad45ad5d86b9402fff8a7393fea98cdf10cfe534b2f296cc10c39",
+    "assets/00-background.png": "b6fd52a4f98574aef48e6f6e04dd3e7fa04408e2f69116d76644265d58f40108",
+    "assets/16-photo_shadow.png": "0d1b432e7a4df85a8bb60747beabb339b5056f9ce49014f64ab5d6530068ca0b",
+    "assets/08-text_title.png": "77b13dfd4b6e610b0b87a5b490bd50e8ca825159453635606014aaa31d79a4f0",
+    "assets/12-backing_color.png": "4bc2809383a53024ec48f8d8f29ed5622a1039fd89d6d8c0fa254a06d1458c12",
+    "assets/01-text_eyebrow.png": "3592a66a8a3b8db3122455793cee35b92535c2e252d7611e09a057853f723cef",
+    "assets/11-backing_color_shadow.png": "166ec3367d841ad4540affd458f63ce8d3c8e439431da992513162652b741876",
+    "assets/05-text_title.png": "f85fb6e4c576cba6c945c7e1dcaea5731de2172585c89913fee5074a87d4c11a",
+    "assets/03-headline_paper_shadow.png": "1405b24eeff8d14ddb51534169af48b509e2daf11317442599995a76246a2796",
+    "assets/14-botanical.png": "d76ce43b4c95c22f583de1ff2b3978d4532cda058322ca5747c87dafaad1c54a"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pillow": "12.3.0",
+    "numpy": "2.3.5",
+    "platform": "macOS-26.6.1-arm64-arm-64bit"
+  },
+  "mask": {
+    "requested": "cutout",
+    "used": "cutout",
+    "coverage": 0.23349505204550958,
+    "engine": "Apple Vision local foreground instances",
+    "warning": "Mask completeness requires side-by-side visual review; coverage is not a fidelity proof."
+  },
+  "photo_boxes": [
+    [
+      156,
+      468,
+      1059,
+      1316
+    ]
+  ],
+  "text_boxes": [
+    [
+      143,
+      38,
+      337,
+      74
+    ],
+    [
+      889,
+      38,
+      1037,
+      74
+    ],
+    [
+      472,
+      119,
+      684,
+      235
+    ],
+    [
+      402,
+      247,
+      802,
+      367
+    ],
+    [
+      284,
+      502,
+      889,
+      667
+    ],
+    [
+      438,
+      1392,
+      762,
+      1468
+    ]
+  ],
+  "requires_visual_review": [
+    "subject_fidelity",
+    "edge_integrity",
+    "text_correct",
+    "style_coherent",
+    "composition_usable"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-03",
+  "reason": "Correct attribution and canonical source-page metadata after reading provider pages. Frozen photo IDs, image bytes, difficulty labels and manifest hash remain unchanged.",
+  "corrections": {
+    "person-hard": {"source_page": "https://www.pexels.com/photo/woman-in-collared-shirt-774909/", "photographer": "Andrea Piacquadio", "verified": "provider page"},
+    "group-hard": {"source_page": "https://www.pexels.com/photo/photo-of-three-people-smiling-while-having-a-meeting-3184338/", "photographer": "fauxels", "verified": "provider page"},
+    "product-easy": {"source_page": "https://www.pexels.com/photo/black-fujifilm-dslr-camera-90946/", "photographer": "Maddy Jaya", "verified": "provider page; original guessed attribution Math corrected"},
+    "product-hard": {"source_page": "https://www.pexels.com/photo/190819/", "photographer": "Fernando Arcos", "verified": "attribution corroborated by published pexels-fernando-arcos-190819 credit; individual page fetch unavailable"},
+    "pet-easy": {"source_page": "https://www.pexels.com/photo/45201/", "photographer": "Pixabay", "verified": "provider CDN image retrieved; individual page fetch unavailable"},
+    "landscape-easy": {"source_page": "https://www.pexels.com/photo/lake-and-mountain-417074/", "photographer": "James Wheeler", "verified": "provider page; original guessed attribution Pixabay corrected"}
+  }
+}

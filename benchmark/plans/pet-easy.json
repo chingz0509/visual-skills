@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "pet",
+  "title": [
+    "今天",
+    "负责可爱"
+  ],
+  "subtitle": "把小小的快乐贴起来",
+  "palette": "lagoon",
+  "layout": "cutout",
+  "photo_mode": "cutout",
+  "tone": "color",
+  "seed": 109,
+  "design_reason": "猫咪脸与耳朵完整保留，细毛和胡须需要单独核对；蓝绿底与黄纸条。",
+  "motif": "LITTLE / HAPPY THINGS",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}

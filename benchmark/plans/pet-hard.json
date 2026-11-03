@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "category": "pet",
+  "title": [
+    "快乐",
+    "成双出现"
+  ],
+  "subtitle": "一起晒太阳吧",
+  "palette": "archive",
+  "layout": "cutout",
+  "photo_mode": "cutout",
+  "tone": "color",
+  "seed": 110,
+  "design_reason": "两只幼犬都保留，草地花朵可能干扰分割；检查脚部与两只狗之间的关系。",
+  "motif": "DOUBLE / THE JOY",
+  "eyebrow": "PAPER / MOMENTS",
+  "edition": "A MOMENT, KEPT",
+  "formal_copy": []
+}
