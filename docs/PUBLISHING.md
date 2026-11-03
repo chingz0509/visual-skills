@@ -1,6 +1,6 @@
 # 首次发布指南
 
-目标：以 `visual-style-skills` 为仓库名，发布 `v0.1.0-experimental` 预发布版本。使用者能看到效果、安装一个风格，并了解当前验证边界。
+目标：以 `visual-skills` 为仓库名，发布 `v0.1.0-experimental` 预发布版本。使用者能看到效果、安装一个风格，并了解当前验证边界。
 
 ## 发布前本地检查
 
@@ -24,10 +24,10 @@ gh auth login --hostname github.com --git-protocol https --web
 gh api user --jq .login
 ```
 
-确认输出是预期的个人账号。组织仓库应显式使用 `组织名/visual-style-skills`，不要猜测目标。
+确认输出是预期的个人账号。组织仓库应显式使用 `组织名/visual-skills`，不要猜测目标。
 
 ```bash
-gh repo create visual-style-skills --public --source=. --remote=origin --push --description 'Experimental visual skills for agents: photo-preserving paper collage, reproducible outputs, and transparent evaluations.'
+gh repo create visual-skills --public --source=. --remote=origin --push --description '给 Agent 一张照片，做成拼贴海报。Photo-to-poster skills for agents.'
 gh repo view --web
 ```
 

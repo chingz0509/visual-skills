@@ -1,42 +1,39 @@
-# Visual Style Skills
+# Visual Skills
 
-[中文](README.md)
+**Give your agent a photo. Get a collage poster.**
 
-Experimental visual skills for agents. Give your agent a photograph and get a paper collage poster while preserving the original photographic subject. Each style lives in a separately installable directory under `skills/`.
+The agent chooses the title, colors and layout while preserving the original photographic subject. The first style is **Photo Collage**, with more styles planned.
 
-![All ten actual outputs from the fixed benchmark](examples/contact-sheet.jpg)
+![Photo Collage: all ten actual outputs](examples/contact-sheet.jpg)
 
-*All ten outputs from the fixed benchmark, shown unchanged. [All ten cases and rejected attempts](benchmark/REPORT.md) remain available.*
-
-## First style: Photo Paper Collage
-
-The agent chooses the title, palette and layout. Local tools compose original photo pixels, paper, typography and print texture into a 1200 × 1600 PNG. Subjects are never redrawn by an image model. Group photos and landscapes stay whole; unreliable cutouts return to whole-photo composition.
-
-The baseline needs no image-generation API key or author-hosted service. It uses your existing agent for planning and visual review. Optional image generation is a future extension, not an implemented feature.
+[中文](README.md) · [All examples](benchmark/REPORT.md)
 
 ## Install and use
 
-Give Codex this repository's URL and ask:
+Tell Codex:
 
-> Install `skills/photo-paper-collage` from this repository and prepare its runtime following the skill instructions.
-
-Alternatively, download the standalone skill ZIP from [Releases](https://github.com/chingz0509/visual-style-skills/releases/tag/v0.1.0-experimental), extract it, and ask Codex to install that folder. Developers can run `python3 scripts/install.py --prepare` from a source checkout. Existing installations are not overwritten.
+> Install `skills/photo-paper-collage` from https://github.com/chingz0509/visual-skills and prepare its runtime.
 
 Then attach a photo:
 
-> Use Photo Paper Collage to make a poster. Choose the title, colors and layout for me.
+> Use Photo Collage to turn this photo into a poster.
 
-Titles follow the conversation language. Supplied formal copy is preserved. Outputs include the PNG and actual assets, fonts and layout records for pixel-identical recomposition. Regenerating a design is not guaranteed to produce the same image.
+Include your own title if you have one. Otherwise, the agent writes it in your conversation language.
 
-## Evidence and limits
+## What you get
 
-- Ten frozen inputs: two each for portraits, groups, products, pets and landscapes.
-- Eight passed the first author-agent review. Two pet cutouts were rejected and passed after whole-photo repair. All intermediate results are published.
-- Ten final complex compositions; zero final simple compositions or failures in this development set. This is not a held-out evaluation; final human acceptance is pending.
-- Six behavioral tests and ten pixel-identical replays passed locally.
-- Verified host: Codex desktop on Apple Silicon macOS 26.6.1. Apple Vision segmentation/OCR requires macOS 14+ and Swift tools. Other hosts and clean-machine dependency setup have not completed end-to-end validation.
-- Four layouts and four palettes; short copy only. Current output retains a template-like appearance.
+- A 1200 × 1600 PNG poster.
+- Original photo subjects, composed without generative redrawing.
+- Saved photos, layers, fonts and layout for identical recomposition.
 
-[Full report](benchmark/REPORT.md) · [Contribution guide](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
+Works with portraits, groups, products, pets and landscapes. Group relationships and complete landscape photos are preserved. The baseline uses your existing agent and local tools; no extra image-generation key is needed.
 
-Code and original procedural textures use MIT. Photos and fonts retain their own licenses; see [third-party credits](THIRD_PARTY.md). User-provided reference posters and raw benchmark photographs are not distributed in the repository.
+## Experimental status
+
+Verified environment: **Codex desktop on Apple Silicon macOS**. Other environments have not completed end-to-end validation.
+
+Of ten fixed test photos, eight passed the first author-agent review and two passed after repair. **Final human acceptance is pending.** Layout variety and fine-fur cutouts remain limited. [All results, including rejected attempts →](benchmark/REPORT.md)
+
+[Download ZIP](https://github.com/chingz0509/visual-skills/releases/tag/v0.1.0-experimental) · [Runtime details (Chinese)](docs/USAGE.md) · [Contribute a style](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
+
+Code uses MIT. Photos and fonts retain their own licenses. [Credits](THIRD_PARTY.md)
