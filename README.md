@@ -1,8 +1,12 @@
 # Visual Style Skills · 视觉风格技能库
 
-**实验项目。** 给 Agent 一张照片，得到保留原片主体的摄影剪贴拼贴海报，以及能重合成同一张成品的素材包。首版只有一个经过开发验证的风格入口：`photo-paper-collage`。后续逐个增加风格，而不是先堆很多未经验证的提示词。
+**给一张照片，让 Agent 把它设计成海报。** 保留照片中的你、物品和风景，用纸张、文字与印刷质感重新编排。
 
-![十张固定测试照片的最终结果](examples/contact-sheet.jpg)
+![摄影剪贴拼贴：人物、产品与风景三张真实成品](examples/showcase.jpg)
+
+首个风格 **摄影剪贴拼贴** · 原片主体保真 · PNG + 可重合成素材包 · 基础流程无需生图密钥
+
+*实验版本。上图选自当前 skill 的真实输出，仅重新编排展示；完整十张测试及被拒绝的中间结果均保留在[实验报告](benchmark/REPORT.md)。*
 
 [安装与使用](#用户怎么用) · [完整案例](benchmark/REPORT.md) · [版本记录](CHANGELOG.md) · [贡献风格](CONTRIBUTING.md) · [English](README.en.md)
 
@@ -28,7 +32,7 @@
 
 > 请安装这个仓库里的 `skills/photo-paper-collage`，并按 skill 的说明检查和准备运行环境。
 
-首次发布后，也可从仓库的 Releases 下载 `photo-paper-collage-0.1.0-experimental.zip`，解压后把文件夹交给 Codex 安装。只用这一种风格时下载独立 skill 包即可；源码包包含开发脚本和测试案例。
+也可从 [Releases](https://github.com/chingz0509/visual-style-skills/releases/tag/v0.1.0-experimental) 下载 `photo-paper-collage-0.1.0-experimental.zip`，解压后把文件夹交给 Codex 安装。只用这一种风格时下载独立 skill 包即可；源码包包含开发脚本和测试案例。
 
 可以把仓库文件夹交给 Codex 并说“安装这里的摄影剪贴拼贴 skill”。开发者也可在仓库目录运行：
 

@@ -4,7 +4,9 @@
 
 Experimental visual skills for agents. Give your agent a photograph and get a paper collage poster while preserving the original photographic subject. Each style lives in a separately installable directory under `skills/`.
 
-![All ten benchmark outputs](examples/contact-sheet.jpg)
+![Three actual outputs: portrait, object and landscape](examples/showcase.jpg)
+
+*Selected actual outputs, arranged for presentation without retouching the posters. [All ten cases and rejected attempts](benchmark/REPORT.md) remain available.*
 
 ## First style: Photo Paper Collage
 
@@ -18,7 +20,7 @@ Give Codex this repository's URL and ask:
 
 > Install `skills/photo-paper-collage` from this repository and prepare its runtime following the skill instructions.
 
-Alternatively, download the standalone skill ZIP from Releases once published, extract it, and ask Codex to install that folder. Developers can run `python3 scripts/install.py --prepare` from a source checkout. Existing installations are not overwritten.
+Alternatively, download the standalone skill ZIP from [Releases](https://github.com/chingz0509/visual-style-skills/releases/tag/v0.1.0-experimental), extract it, and ask Codex to install that folder. Developers can run `python3 scripts/install.py --prepare` from a source checkout. Existing installations are not overwritten.
 
 Then attach a photo:
 
