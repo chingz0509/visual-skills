@@ -46,6 +46,6 @@
 
 ## 更多
 
-[下载 visual-skills 安装包](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/visual-skills-0.1.0-experimental.zip) · [使用与运行说明](docs/USAGE.md) · [贡献风格](CONTRIBUTING.md) · [设计约定](docs/DESIGN.md) · [版本记录](CHANGELOG.md) · [发布指南](docs/PUBLISHING.md)
+[下载 visual-skills 安装包](https://github.com/chingz0509/visual-skills/releases/tag/v0.1.0-experimental) · [使用与运行说明](docs/USAGE.md) · [贡献风格](CONTRIBUTING.md) · [设计约定](docs/DESIGN.md) · [版本记录](CHANGELOG.md) · [发布指南](docs/PUBLISHING.md)
 
 代码采用 MIT 许可；照片和字体遵循各自许可。[素材来源](THIRD_PARTY.md)

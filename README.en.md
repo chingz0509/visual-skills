@@ -36,6 +36,6 @@ Verified environment: **Codex desktop on Apple Silicon macOS**. Other environmen
 
 Of ten fixed test photos, eight passed the first author-agent review and two passed after repair. **Final human acceptance is pending.** Layout variety and fine-fur cutouts remain limited. [All results, including rejected attempts →](benchmark/REPORT.md)
 
-[Download visual-skills](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/visual-skills-0.1.0-experimental.zip) · [Runtime details (Chinese)](docs/USAGE.md) · [Contribute a style](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
+[Download visual-skills](https://github.com/chingz0509/visual-skills/releases/tag/v0.1.0-experimental) · [Runtime details (Chinese)](docs/USAGE.md) · [Contribute a style](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 Code uses MIT. Photos and fonts retain their own licenses. [Credits](THIRD_PARTY.md)
