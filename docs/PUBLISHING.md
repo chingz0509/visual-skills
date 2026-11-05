@@ -1,49 +1,20 @@
-# 首次发布指南
+# 发布维护
 
-目标：以 `visual-skills` 为仓库名，发布 `v0.1.0-experimental` 预发布版本。使用者能看到效果、安装一个风格，并了解当前验证边界。
+用户只需要照片拼贴的独立安装包。开发源码由 GitHub 提供，不另做混合开发包。
 
-## 发布前本地检查
-
-用 skill 的 bootstrap 返回的 Python 执行：
+发布前，在仓库目录执行：
 
 ```bash
 python -m unittest discover -s tests -v
 python scripts/check_release.py
+python scripts/check_privacy.py --history
 python scripts/package.py
-git status --short
 ```
 
-检查脚本核对冻结清单、案例数量和版本材料；不会代替看图或用户验收。打包后的 ZIP 在 `dist/`。完整运行素材保留在本地，不随仓库发布。`.github/workflows/checks.yml` 仅验证程序和打包，不把 CI 通过等同审美通过。
+使用已安装 Pillow、NumPy 的 Python。打包只读取明确允许、已纳入 Git 的技能文件；不遍历整个工作目录。输出为 `dist/photo-paper-collage-0.1.0-experimental.zip` 和 `SHA256SUMS.json`。发布这两项即可，保持版本、提交、Release 文案和校验值一致。
 
-## 登录并创建仓库
+重新下载已发布安装包，核对校验值，并在临时目录解压，确认 `photo-paper-collage/SKILL.md` 以及字体、脚本完整。检查不能代替真实安装、看图和用户验收。
 
-以下命令在仓库目录执行。首次需要维护者在浏览器完成 GitHub 登录：
+公开目录保留代码、许可、成品、失败案例、必要的计划与验收记录。个人照片、原始 OCR、图层运行清单、宿主路径、依赖缓存、环境变量、宣传草稿和浏览器数据留在仓库外。完整生成包只交付给该任务的用户，不自动公开。
 
-```bash
-gh auth login --hostname github.com --git-protocol https --web
-gh api user --jq .login
-```
-
-确认输出是预期的个人账号。组织仓库应显式使用 `组织名/visual-skills`，不要猜测目标。
-
-```bash
-gh repo create visual-skills --public --source=. --remote=origin --push --description '给 Agent 一张照片，做成拼贴海报。Photo-to-poster skills for agents.'
-gh repo view --web
-```
-
-如果远端已有同名项目，先检查内容与归属，不覆盖或强推。确认首页图片和文档可访问，查看 Actions 的检查结果。首次发布日期在成功后再写入 CHANGELOG。
-
-## 发布预发布版
-
-先确认本地工作区干净、提交已推送且远端检查通过，再对同一提交打包和标记版本：
-
-```bash
-python scripts/package.py
-git tag -a v0.1.0-experimental -m 'First experimental photo paper collage skill'
-git push origin v0.1.0-experimental
-gh release create v0.1.0-experimental dist/photo-paper-collage-0.1.0-experimental.zip dist/visual-style-skills-0.1.0-experimental.zip dist/SHA256SUMS.json --verify-tag --prerelease --title '0.1.0-experimental · 摄影剪贴拼贴' --notes-file docs/RELEASE-0.1.0.md
-```
-
-发布后从 Release 下载独立 skill 包到新目录，验证校验值和安装步骤。把真实仓库链接提供给试用者，请他们记录系统、Agent、首次安装是否成功、主体保真与版式是否可用。优先改善安装和失败处理，再引入第二种风格。
-
-命令依据：[GitHub 创建仓库](https://cli.github.com/manual/gh_repo_create)、[发布 Release](https://cli.github.com/manual/gh_release_create)、[Python 自动检查](https://docs.github.com/en/actions/tutorials/build-and-test-code/python)。
+如发现密钥泄露，先撤销密钥，再处理历史和发布包。删除当前文件不会删除 Git 历史；改写共享历史需另行评估与维护者授权。对没有发现敏感信息的旧提交，不为目录精简强推历史。

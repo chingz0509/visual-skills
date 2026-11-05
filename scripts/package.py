@@ -1,29 +1,47 @@
 #!/usr/bin/env python3
-"""Package a self-contained skill and a source project, excluding private/runtime artifacts."""
+"""Build one self-contained install ZIP from an explicit tracked-file allowlist."""
+import hashlib
+import json
 from pathlib import Path
-import hashlib,json,zipfile
-ROOT=Path(__file__).resolve().parents[1]
-DIST=ROOT/'dist';DIST.mkdir(exist_ok=True)
-SKILL=ROOT/'skills/photo-paper-collage'
+import zipfile
+from check_privacy import audit_files, tracked_files
 
-def archive(path,files,base,prefix):
- with zipfile.ZipFile(path,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-  for file in files:
-   if file.is_file() and '__pycache__' not in file.parts and file.suffix!='.pyc' and file.name!='.DS_Store':
-    z.write(file,str(Path(prefix)/file.relative_to(base)))
- with zipfile.ZipFile(path) as z:
-  assert z.testzip() is None
- print(path.name,path.stat().st_size,'bytes')
+ROOT = Path(__file__).resolve().parents[1]
+SKILL = ROOT / 'skills/photo-paper-collage'
+REQUIRED = {
+    'SKILL.md', 'LICENSE', 'THIRD_PARTY.md', 'agents/openai.yaml',
+    'references/enhancement.md', 'references/plan.md', 'references/review.md', 'references/style.md',
+    'scripts/bootstrap.py', 'scripts/collage.py', 'scripts/replay.py', 'scripts/run.py', 'scripts/vision.swift',
+    'assets/fonts/NotoSansSC[wght].ttf', 'assets/fonts/BebasNeue-Regular.ttf',
+    'assets/fonts/notosanssc-OFL.txt', 'assets/fonts/bebasneue-OFL.txt', 'assets/fonts/manifest.json',
+}
 
-archive(DIST/'photo-paper-collage-0.1.0-experimental.zip',sorted(SKILL.rglob('*')),SKILL,'photo-paper-collage')
-files=[]
-for p in sorted(ROOT.rglob('*')):
- rel=p.relative_to(ROOT)
- if not rel.parts or rel.parts[0] in ['dist','.git']:continue
- if rel.parts[:2] in [('benchmark','inputs'),('benchmark','runs')]:continue
- if rel.as_posix()=='benchmark/input-contact-sheet.jpg':continue
- if p.name.startswith('.env'):continue
- files.append(p)
-archive(DIST/'visual-style-skills-0.1.0-experimental.zip',files,ROOT,'visual-style-skills')
-manifest={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in DIST.glob('*.zip')}
-(DIST/'SHA256SUMS.json').write_text(json.dumps(manifest,indent=2)+'\n')
+
+def package(destination=None):
+    files = [p for p in tracked_files(ROOT) if p.is_relative_to(SKILL) and p.relative_to(SKILL).as_posix() in REQUIRED]
+    found = {p.relative_to(SKILL).as_posix() for p in files}
+    if found != REQUIRED:
+        raise ValueError('Missing tracked skill files: ' + ', '.join(sorted(REQUIRED - found)))
+    findings = audit_files(files, ROOT)
+    if findings:
+        raise ValueError('Publication scan blocked package: ' + '; '.join(f'{name}: {reason}' for name, reason in findings))
+    destination = Path(destination) if destination else ROOT / 'dist'
+    destination.mkdir(parents=True, exist_ok=True)
+    out = destination / 'photo-paper-collage-0.1.0-experimental.zip'
+    with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
+        for file in sorted(files):
+            # Fixed metadata avoids embedding local timestamps, owners or permissions.
+            info = zipfile.ZipInfo('photo-paper-collage/' + file.relative_to(SKILL).as_posix(), (2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o100644 << 16
+            archive.writestr(info, file.read_bytes())
+    with zipfile.ZipFile(out) as archive:
+        assert archive.testzip() is None
+    checksum = {out.name: hashlib.sha256(out.read_bytes()).hexdigest()}
+    (destination / 'SHA256SUMS.json').write_text(json.dumps(checksum, indent=2) + '\n')
+    print(f'{out.name}: {len(files)} files, {out.stat().st_size} bytes. No developer/source bundle.')
+    return out
+
+
+if __name__ == '__main__':
+    package()

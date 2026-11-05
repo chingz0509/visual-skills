@@ -23,7 +23,7 @@ for item in items:
  shutil.copyfile(root/'state.json',target/'state.json')
  for attempt in state['attempts']:
   source=root/attempt['bundle'];dest=target/attempt['bundle'];dest.mkdir(exist_ok=True)
-  for name in ['final.png','plan.json','checks.json','visual-review.json','photo-processing.json','record.json','ocr.json','error.json']:
+  for name in ['final.png','plan.json','checks.json','visual-review.json','error.json']:
    if (source/name).exists():shutil.copyfile(source/name,dest/name)
   all_attempts.append({'id':key,**attempt})
 lines += ['','## 每张照片与完整尝试','', '原片、实际图层、字体和复现脚本在本地 `benchmark/runs/'+a.run+'/` 中保留。公开目录保留成品与检查记录，原片按固定清单下载；完整素材包不在 Git 分发中。','', '来源许可及元数据更正见 [THIRD_PARTY](../THIRD_PARTY.md)。']

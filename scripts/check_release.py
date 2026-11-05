@@ -11,7 +11,7 @@ def main():
     required = [
         'README.md', 'README.en.md', 'LICENSE', 'THIRD_PARTY.md',
         'CONTRIBUTING.md', 'CHANGELOG.md', 'docs/PUBLISHING.md',
-        'docs/RELEASE-0.1.0.md', 'skills/photo-paper-collage/SKILL.md',
+        'skills/photo-paper-collage/SKILL.md',
         'skills/photo-paper-collage/assets/fonts/notosanssc-OFL.txt',
         'skills/photo-paper-collage/assets/fonts/bebasneue-OFL.txt',
     ]

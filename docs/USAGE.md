@@ -2,6 +2,12 @@
 
 [返回首页](../README.md)
 
+## 安装包是什么
+
+只需 `photo-paper-collage-0.1.0-experimental.zip`，解压后将 `photo-paper-collage` 文件夹交给 Agent 安装。该目录内的 `SKILL.md` 是入口，脚本、字体和规则已包含。GitHub 的 Source code 是开发源码，不是另一个必装组件。
+
+首次运行可能下载 Pillow、NumPy 等依赖；有可用环境时直接复用。照片合成在本地进行，但宿主 Agent 为了看图可能处理上传图片，请以所用 Agent 的设置为准。
+
 ## 本地安装
 
 在仓库目录运行 `python3 scripts/install.py --prepare`，安装到 Codex skills 目录。同名安装不会被覆盖。若技能列表未刷新，新开对话或让 Agent 读取安装后的 `SKILL.md`。

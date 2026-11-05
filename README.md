@@ -10,9 +10,11 @@
 
 ## 安装使用
 
+`visual-skills` 是风格合集，**照片拼贴**（`photo-paper-collage`）是其中一个可独立安装的 skill。只需安装这一项，所需脚本和字体已包含。
+
 把下面这句话发给 Codex：
 
-> 请安装 https://github.com/chingz0509/visual-skills 中的 `skills/photo-paper-collage`，并准备运行环境。
+> 请安装 https://github.com/chingz0509/visual-skills 中的 `skills/photo-paper-collage`，只安装这个 skill，首次使用时按说明自动准备运行依赖。
 
 安装后，上传照片并说：
 
@@ -26,7 +28,7 @@
 - **原片主体保真**：照片可以抠图、变黑白、加印刷质感，主体不交给生图模型重绘。
 - **可再次合成的素材包**：保存原图、图层、字体和布局。
 
-基础流程使用你现有的 Agent 和本地工具，无需额外生图密钥。
+基础流程使用你现有的 Agent，无需额外生图密钥或其他 skill。首次使用可能需要下载 Python 图像处理依赖，由 Agent 自动处理；需要本地执行权限。
 
 ## 可用风格
 
@@ -44,6 +46,6 @@
 
 ## 更多
 
-[下载 ZIP](https://github.com/chingz0509/visual-skills/releases/tag/v0.1.0-experimental) · [使用与运行说明](docs/USAGE.md) · [贡献风格](CONTRIBUTING.md) · [设计约定](docs/DESIGN.md) · [版本记录](CHANGELOG.md) · [发布指南](docs/PUBLISHING.md)
+[下载照片拼贴安装包](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/photo-paper-collage-0.1.0-experimental.zip) · [使用与运行说明](docs/USAGE.md) · [贡献风格](CONTRIBUTING.md) · [设计约定](docs/DESIGN.md) · [版本记录](CHANGELOG.md) · [发布指南](docs/PUBLISHING.md)
 
 代码采用 MIT 许可；照片和字体遵循各自许可。[素材来源](THIRD_PARTY.md)

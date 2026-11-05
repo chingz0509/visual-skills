@@ -8,3 +8,18 @@ dist/
 benchmark/inputs/
 benchmark/runs/
 benchmark/input-contact-sheet.jpg
+
+# Personal data, generated files and credentials
+outputs/
+output/
+private/
+local/
+*.log
+*.pem
+*.key
+credentials*.json
+cookies*.json
+**/.env*
+examples/**/record.json
+examples/**/ocr.json
+examples/**/photo-processing.json
