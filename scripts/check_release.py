@@ -11,9 +11,9 @@ def main():
     required = [
         'README.md', 'README.en.md', 'LICENSE', 'THIRD_PARTY.md',
         'CONTRIBUTING.md', 'CHANGELOG.md', 'docs/PUBLISHING.md',
-        'skills/photo-paper-collage/SKILL.md',
-        'skills/photo-paper-collage/assets/fonts/notosanssc-OFL.txt',
-        'skills/photo-paper-collage/assets/fonts/bebasneue-OFL.txt',
+        'skills/visual-skills/SKILL.md',
+        'skills/visual-skills/assets/fonts/notosanssc-OFL.txt',
+        'skills/visual-skills/assets/fonts/bebasneue-OFL.txt',
     ]
     for name in required:
         if not (ROOT / name).is_file():

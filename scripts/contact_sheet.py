@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--run',required=True);a=p.parse_args()
 items=json.loads((ROOT/'benchmark/manifest.json').read_text())['items']
 canvas=Image.new('RGB',(1800,1120),'#e8e3d9');d=ImageDraw.Draw(canvas)
-f=ImageFont.truetype(str(ROOT/'skills/photo-paper-collage/assets/fonts/BebasNeue-Regular.ttf'),24)
+f=ImageFont.truetype(str(ROOT/'skills/visual-skills/assets/fonts/BebasNeue-Regular.ttf'),24)
 for i,item in enumerate(items):
  root=ROOT/'benchmark/runs'/a.run/item['id']
  state=json.loads((root/'state.json').read_text());n=state['attempts'][-1]['index']

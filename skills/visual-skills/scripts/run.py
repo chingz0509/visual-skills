@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 HERE = Path(__file__).resolve().parent
-CACHE = Path(os.environ.get('VISUAL_SKILLS_CACHE', Path.home() / '.cache' / 'visual-style-skills'))
+CACHE = Path(os.environ.get('VISUAL_SKILLS_CACHE', Path.home() / '.cache' / 'visual-skills'))
 
 def main():
     runtime = CACHE / 'runtime.json'

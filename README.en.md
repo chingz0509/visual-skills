@@ -1,4 +1,4 @@
-# Visual Skills
+# visual-skills
 
 **Give your agent a photo. Get a collage poster.**
 
@@ -10,15 +10,15 @@ The agent chooses the title, colors and layout while preserving the original pho
 
 ## Install and use
 
-`visual-skills` is the collection. **Photo Collage** (`photo-paper-collage`) is one self-contained skill inside it. Install only that skill; its scripts and fonts are included.
+The project, skill and install package all use the name **`visual-skills`**. It currently supports photo collage. Scripts and fonts are included; install this single skill.
 
 Tell Codex:
 
-> Install `skills/photo-paper-collage` from https://github.com/chingz0509/visual-skills and prepare its runtime.
+> Install `skills/visual-skills` from https://github.com/chingz0509/visual-skills and prepare its runtime.
 
 Then attach a photo:
 
-> Use Photo Collage to turn this photo into a poster.
+> Use visual-skills to turn this photo into a collage poster.
 
 Include your own title if you have one. Otherwise, the agent writes it in your conversation language.
 
@@ -36,6 +36,6 @@ Verified environment: **Codex desktop on Apple Silicon macOS**. Other environmen
 
 Of ten fixed test photos, eight passed the first author-agent review and two passed after repair. **Final human acceptance is pending.** Layout variety and fine-fur cutouts remain limited. [All results, including rejected attempts →](benchmark/REPORT.md)
 
-[Download Photo Collage](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/photo-paper-collage-0.1.0-experimental.zip) · [Runtime details (Chinese)](docs/USAGE.md) · [Contribute a style](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
+[Download visual-skills](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/visual-skills-0.1.0-experimental.zip) · [Runtime details (Chinese)](docs/USAGE.md) · [Contribute a style](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 Code uses MIT. Photos and fonts retain their own licenses. [Credits](THIRD_PARTY.md)

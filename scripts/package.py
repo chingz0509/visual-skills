@@ -7,7 +7,7 @@ import zipfile
 from check_privacy import audit_files, tracked_files
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / 'skills/photo-paper-collage'
+SKILL = ROOT / 'skills/visual-skills'
 REQUIRED = {
     'SKILL.md', 'LICENSE', 'THIRD_PARTY.md', 'agents/openai.yaml',
     'references/enhancement.md', 'references/plan.md', 'references/review.md', 'references/style.md',
@@ -27,11 +27,11 @@ def package(destination=None):
         raise ValueError('Publication scan blocked package: ' + '; '.join(f'{name}: {reason}' for name, reason in findings))
     destination = Path(destination) if destination else ROOT / 'dist'
     destination.mkdir(parents=True, exist_ok=True)
-    out = destination / 'photo-paper-collage-0.1.0-experimental.zip'
+    out = destination / 'visual-skills-0.1.0-experimental.zip'
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
         for file in sorted(files):
             # Fixed metadata avoids embedding local timestamps, owners or permissions.
-            info = zipfile.ZipInfo('photo-paper-collage/' + file.relative_to(SKILL).as_posix(), (2026, 1, 1, 0, 0, 0))
+            info = zipfile.ZipInfo('visual-skills/' + file.relative_to(SKILL).as_posix(), (2026, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             archive.writestr(info, file.read_bytes())

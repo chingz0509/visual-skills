@@ -25,7 +25,7 @@ class PublicationTests(unittest.TestCase):
     def test_untracked_or_unapproved_file_cannot_enter_install_zip(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
-            skill = root / 'skills/photo-paper-collage'
+            skill = root / 'skills/visual-skills'
             for name in package.REQUIRED:
                 file = skill / name
                 file.parent.mkdir(parents=True, exist_ok=True)

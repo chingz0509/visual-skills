@@ -14,8 +14,8 @@ from PIL import Image, ImageDraw
 ROOT=Path(__file__).resolve().parents[1]
 def load(name,file):
  spec=importlib.util.spec_from_file_location(name,file);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
-c=load('collage',ROOT/'skills/photo-paper-collage/scripts/collage.py')
-r=load('replay',ROOT/'skills/photo-paper-collage/scripts/replay.py')
+c=load('collage',ROOT/'skills/visual-skills/scripts/collage.py')
+r=load('replay',ROOT/'skills/visual-skills/scripts/replay.py')
 
 class WorkflowTests(unittest.TestCase):
  def setUp(self):

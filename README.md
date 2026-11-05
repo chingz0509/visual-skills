@@ -1,4 +1,4 @@
-# Visual Skills · 视觉技能库
+# visual-skills
 
 **给 Agent 一张照片，做成拼贴海报。**
 
@@ -10,15 +10,15 @@
 
 ## 安装使用
 
-`visual-skills` 是风格合集，**照片拼贴**（`photo-paper-collage`）是其中一个可独立安装的 skill。只需安装这一项，所需脚本和字体已包含。
+项目、skill 和安装包统一叫 **`visual-skills`**，当前支持照片拼贴。所需脚本和字体已包含，只需安装这一个 skill。
 
 把下面这句话发给 Codex：
 
-> 请安装 https://github.com/chingz0509/visual-skills 中的 `skills/photo-paper-collage`，只安装这个 skill，首次使用时按说明自动准备运行依赖。
+> 请安装 https://github.com/chingz0509/visual-skills 中的 `skills/visual-skills`，只安装这个 skill，首次使用时按说明自动准备运行依赖。
 
 安装后，上传照片并说：
 
-> 用照片拼贴，把这张照片做成海报。
+> 用 visual-skills，把这张照片做成拼贴海报。
 
 也可以附上你想用的标题。不提供文案时，Agent 会自动设计。
 
@@ -34,7 +34,7 @@
 
 | 风格 | 适用照片 | 状态 |
 |---|---|---|
-| [照片拼贴](skills/photo-paper-collage/SKILL.md) | 单人、合照、产品、宠物、风景 | 实验版 |
+| [visual-skills · 照片拼贴](skills/visual-skills/SKILL.md) | 单人、合照、产品、宠物、风景 | 实验版 |
 
 每个风格可单独安装。合照保留所有人和原有关系，风景保留完整照片。
 
@@ -46,6 +46,6 @@
 
 ## 更多
 
-[下载照片拼贴安装包](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/photo-paper-collage-0.1.0-experimental.zip) · [使用与运行说明](docs/USAGE.md) · [贡献风格](CONTRIBUTING.md) · [设计约定](docs/DESIGN.md) · [版本记录](CHANGELOG.md) · [发布指南](docs/PUBLISHING.md)
+[下载 visual-skills 安装包](https://github.com/chingz0509/visual-skills/releases/download/v0.1.0-experimental/visual-skills-0.1.0-experimental.zip) · [使用与运行说明](docs/USAGE.md) · [贡献风格](CONTRIBUTING.md) · [设计约定](docs/DESIGN.md) · [版本记录](CHANGELOG.md) · [发布指南](docs/PUBLISHING.md)
 
 代码采用 MIT 许可；照片和字体遵循各自许可。[素材来源](THIRD_PARTY.md)

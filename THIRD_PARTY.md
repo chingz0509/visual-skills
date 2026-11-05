@@ -28,7 +28,7 @@
 - [Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)，Google/Adobe，SIL Open Font License 1.1。
 - [Bebas Neue](https://github.com/google/fonts/tree/main/ofl/bebasneue)，The Bebas Neue Project Authors / Ryoichi Tsunekawa，SIL Open Font License 1.1。
 
-原字体未修改，随 skill 提供各自 OFL 许可。下载文件 SHA-256 和来源见 `skills/photo-paper-collage/assets/fonts/manifest.json`。
+原字体未修改，随 skill 提供各自 OFL 许可。下载文件 SHA-256 和来源见 `skills/visual-skills/assets/fonts/manifest.json`。
 
 ## 程序与系统能力
 

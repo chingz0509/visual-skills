@@ -11,7 +11,7 @@ import subprocess
 import sys
 
 SKILL = Path(__file__).resolve().parents[1]
-CACHE = Path(os.environ.get('VISUAL_SKILLS_CACHE', Path.home() / '.cache' / 'visual-style-skills'))
+CACHE = Path(os.environ.get('VISUAL_SKILLS_CACHE', Path.home() / '.cache' / 'visual-skills'))
 
 def probe(executable):
     try:

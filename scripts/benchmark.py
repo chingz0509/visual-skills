@@ -23,7 +23,7 @@ def main():
     if output.exists():raise SystemExit('Use a new run name; never replace previous attempts')
     output.mkdir(parents=True)
     def render(item):
-        cmd=[sys.executable,str(ROOT/'skills/photo-paper-collage/scripts/run.py'),'render','--input',str(ROOT/'benchmark'/item['file']),'--plan',str(ROOT/'benchmark/plans'/(item['id']+'.json')),'--output',str(output/item['id'])]
+        cmd=[sys.executable,str(ROOT/'skills/visual-skills/scripts/run.py'),'render','--input',str(ROOT/'benchmark'/item['file']),'--plan',str(ROOT/'benchmark/plans'/(item['id']+'.json')),'--output',str(output/item['id'])]
         result=subprocess.run(cmd,capture_output=True,text=True)
         return item['id'],result.returncode,result.stdout,result.stderr
     with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:
