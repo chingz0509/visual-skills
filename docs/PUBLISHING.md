@@ -11,7 +11,7 @@ python scripts/check_privacy.py --history
 python scripts/package.py
 ```
 
-使用已安装 Pillow、NumPy 的 Python。打包只读取明确允许、已纳入 Git 的技能文件；不遍历整个工作目录。输出为 `dist/visual-skills-0.1.0-experimental.zip` 和 `SHA256SUMS.json`。发布这两项即可，保持版本、提交、Release 文案和校验值一致。
+使用已安装 Pillow、NumPy 的 Python。打包只读取明确允许、已纳入 Git 的技能文件；不遍历整个工作目录。当前输出为 `dist/visual-skills-0.2.0-preview.zip` 和 `SHA256SUMS.json`。旧 Release 不会随源码自动更新；实际发布时保持版本、提交、Release 文案和校验值一致。
 
 重新下载已发布安装包，核对校验值，并在临时目录解压，确认 `visual-skills/SKILL.md` 以及字体、脚本完整。检查不能代替真实安装、看图和用户验收。
 

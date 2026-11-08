@@ -1,0 +1,24 @@
+{
+  "model": "gpt-image-2",
+  "prompt": "Use case: style-transfer. This image is the edit target and identity reference: the supplied adult woman's head-and-shoulders photo. Create a finished vertical 3:4 independent music/editorial paper collage poster, not a mockup, not a UI card. A confident designed composition with a tactile art-directed scanned-zine aesthetic. Keep this woman's recognizable face, hairstyle, expression, earrings and necklace; allow analog monochrome duotone, coarse photographic halftone and photocopied tonal compression. Do not invent a different face or extra people. Her head-and-shoulders silhouette is the one large photographic focal point, taking roughly 60% of the height, placed slightly to the right, with a close irregular cream cut-paper edge. Her face must remain unobscured.\n\nComposition: warm off-white rough stock with a very large cobalt blue irregular torn-paper field across the middle and upper right; a restrained vermilion red torn rectangle at lower left, overlapping the edge of a faded gray typographic scrap that has only abstract indistinct printed marks, no invented factual copy. Large black and cobalt Chinese headline at upper left, two unequal lines with dramatic size contrast; the head enters the whitespace between the typography and paper. A smaller sharply tilted off-white label at the bottom carries the subhead. A little lemon yellow marker stroke and a single irregular drawn orbit give energy. Several purposeful paper overlaps, narrow dark shallow contact shadows and fibrous torn edges; very fine print grain across all materials. Strong hierarchy at thumbnail size. Asymmetric, bold, contemporary record-shop flyer. Not a centered framed portrait with title above and caption below. No graph-paper backing, no repetitive star stickers, no cartoon icons, no soft 3D, no massive grunge scratches, no rounded frame. The actual portrait should feel like an expressive analog magazine clipping, not a clean beauty stock image pasted on a template.\n\nText, exactly these words, no additional visible text:\nMain headline in bold expressive condensed Chinese: “不必” and on a separate larger line “乖乖入框”\nSmall secondary line: “把今天，剪成自己的样子。”\nSmall quiet English footer: “OUT OF THE FRAME”\n\nAll Chinese strokes must be correct and legible. Keep safe margins. Preserve the woman's likeness while making an original editorial collage; no real magazine logos, no brand endorsements, no dates or invented event claims. Deliver the actual flat poster edge to edge, with no device, no table or surroundings.\n",
+  "permission": "user_selected_creative",
+  "parameters": {
+    "size": "1200x1600",
+    "quality": "high",
+    "output_format": "png"
+  },
+  "allowed_changes": [
+    "印刷网点与色调",
+    "背景、纸层、主体在版面中的位置"
+  ],
+  "keep_features": [
+    "人物可辨识的脸和发型",
+    "耳饰与项链",
+    "一位人物"
+  ],
+  "pixel_preserving": false,
+  "editable_internal_layers": false,
+  "source_case": "person-easy",
+  "agent_review": "complex_pass",
+  "human_feedback": "2026-11-09: user approved this version; not a full benchmark acceptance"
+}

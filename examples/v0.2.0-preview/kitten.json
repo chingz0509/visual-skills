@@ -1,0 +1,24 @@
+{
+  "model": "gpt-image-2",
+  "prompt": "Use case: style-transfer. Edit target and subject reference is the supplied photograph of ONE cream kitten with blue eyes and pink nose, upright on a brown blanket. Create a finished vertical 3:4 playful indie paper-cut editorial poster, an expressive physical collage photographed flat. Preserve recognizable kitten features, cream fur, blue eyes, pink nose and two ears, exactly one kitten and anatomically correct two front paws. You may re-render the kitten as a printed duotone photographic clipping with gentle halftone and slightly warm highlights; do not turn it into a generic cartoon cat. Remove the brown blanket and dark room; complete the existing small silhouette naturally only as needed for the clipping, no additional limbs.\n\nArt direction: a saturated warm tomato red paper background, a huge irregular pale butter-yellow oval/arch almost filling the lower two thirds, one large kitten clipping slightly tilted on the lower center right with a thin irregular cream paper rim. The kitten is big, breathing room around both ears and paws. Large jaunty black Chinese headline at upper left with deliberately oversized irregular but readable typographic characters, TWO lines occupying about 30% of the sheet. Words have punchy, playful rhythm. A torn lilac paper caption tab at lower left overlaps the yellow field beside the kitten, not over its eyes or paws. Add only one blue crayon loop, one small asymmetrical black ink asterisk high at right, and a tiny creamy torn tab. A tactile layered composition with print registration drift and fine paper fibers; coherent screen-print palette red, butter yellow, lilac, black. Strong irregular negative space, one dominant subject and one dominant headline. No centered photo rectangle, no graph-paper square behind subject, no garland, no generic grid of stickers, no template header, no rounded outer corners, no decorative fake prose.\n\nText, exactly these words and no other text:\nHeadline line 1: “今天”\nHeadline line 2: “只管可爱”\nCaption on the lilac paper: “别催，我在晒太阳。”\nSmall simple English footer near the bottom: “SMALL PAWS / BIG MOOD”\n\nAll Chinese glyphs must be correct, well spaced and legible. Flat designed artwork edge to edge, no mockup, no tabletop. Charming but sophisticated editorial collage, not children's clipart. No other cats, no product logos, no invented real-world facts.\n",
+  "permission": "user_selected_creative",
+  "parameters": {
+    "size": "1200x1600",
+    "quality": "high",
+    "output_format": "png"
+  },
+  "allowed_changes": [
+    "印刷网点与色调",
+    "背景、纸层、主体在版面中的位置"
+  ],
+  "keep_features": [
+    "一只浅奶油色蓝眼幼猫",
+    "两耳两只前爪及胡须",
+    "没有额外动物"
+  ],
+  "pixel_preserving": false,
+  "editable_internal_layers": false,
+  "source_case": "pet-easy",
+  "agent_review": "complex_pass",
+  "human_feedback": "2026-11-09: user approved this version; not a full benchmark acceptance"
+}

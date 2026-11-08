@@ -1,4 +1,4 @@
 interface:
   display_name: "visual-skills"
-  short_description: "把照片做成纸张拼贴海报，保留原片主体，自动设计标题、配色和布局"
+  short_description: "照片变纸张拼贴海报，可选原片保留或 AI 创意改造"
   default_prompt: "用 $visual-skills 把这张照片做成拼贴海报。"

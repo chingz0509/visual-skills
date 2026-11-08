@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Photo-preserving collage compositor. No generation API, uploads, or synthetic subject RGB."""
+"""Local collage rendering and explicit import of user-selected creative image edits.
+
+This program never calls an image service. Creative images come from the host's
+image tool; original-photo rendering remains a separate, pixel-checked route.
+"""
 import argparse
 import hashlib
 import json
@@ -22,6 +26,8 @@ PALETTES = {
     'lilac': {'bg': '#b6a0d5', 'paper': '#f0e8d7', 'accent': '#f35024', 'second': '#ded453', 'ink': '#272321'},
     'archive': {'bg': '#eee3ca', 'paper': '#f8f0dd', 'accent': '#df4a2d', 'second': '#d8aa28', 'ink': '#272923'},
     'forest': {'bg': '#263d35', 'paper': '#eee6d4', 'accent': '#e0b93d', 'second': '#c4aa92', 'ink': '#25352d'},
+    'cobalt': {'bg': '#eee8dc', 'paper': '#f8f0df', 'accent': '#2048b5', 'second': '#e85332', 'ink': '#202321'},
+    'tomato': {'bg': '#d94732', 'paper': '#f4e9d5', 'accent': '#eadb8d', 'second': '#b2a0cd', 'ink': '#242520'},
 }
 REVIEW_KEYS = ['subject_fidelity', 'edge_integrity', 'text_correct', 'style_coherent', 'composition_usable']
 
@@ -55,7 +61,10 @@ def texture(size, color, seed, strength=2.2):
     width, height = size
     noise = rng.normal(0, strength, (height, width, 1))
     base = np.array(rgb(color), dtype=np.float32).reshape(1, 1, 3)
-    arr = np.clip(base + noise, 0, 255).astype('uint8')
+    # Broad stock variation plus fine grain, rather than uniform digital noise.
+    cloud = Image.fromarray(rng.integers(0, 255, (max(2,height//80), max(2,width//80)), dtype='uint8'))
+    cloud = np.asarray(cloud.resize(size, Image.Resampling.BICUBIC), dtype=np.float32)
+    arr = np.clip(base + noise + ((cloud-128)*.028)[:,:,None], 0, 255).astype('uint8')
     return Image.fromarray(arr).convert('RGBA')
 
 
@@ -64,10 +73,14 @@ def torn_paper(size, color, seed, grid=False, ruled=False):
     im = texture(size, color, seed)
     rng = np.random.default_rng(seed)
     edge = min(10, width // 30, height // 20)
-    pts = [(x, int(rng.integers(1, max(edge, 2)))) for x in range(0, width, 9)]
-    pts += [(width - int(rng.integers(1, max(edge, 2))), y) for y in range(0, height, 9)]
-    pts += [(x, height - int(rng.integers(1, max(edge, 2)))) for x in range(width - 1, -1, -9)]
-    pts += [(int(rng.integers(1, max(edge, 2))), y) for y in range(height - 1, -1, -9)]
+    def tear(length):
+        anchors = rng.uniform(1, max(edge,2), max(2,length//70+1))
+        xs = list(range(0,length,4))+[length-1]
+        return [(x, int(np.clip(np.interp(x,np.linspace(0,length-1,len(anchors)),anchors)+rng.uniform(-2,2),0,edge+2))) for x in xs]
+    pts = tear(width)
+    pts += [(width-1-j,y) for y,j in tear(height)]
+    pts += [(x,height-1-j) for x,j in reversed(tear(width))]
+    pts += [(j,y) for y,j in reversed(tear(height))]
     alpha = Image.new('L', size); ImageDraw.Draw(alpha).polygon(pts, fill=255)
     d = ImageDraw.Draw(im)
     if grid:
@@ -159,7 +172,7 @@ def validate_plan(plan):
     for key in required:
         if key not in plan: raise ValueError('Missing plan key: ' + key)
     if plan['category'] not in ['person', 'group', 'product', 'pet', 'landscape']: raise ValueError('Unsupported category')
-    if plan['layout'] not in ['cutout', 'editorial', 'landscape', 'simple']: raise ValueError('Unsupported layout')
+    if plan['layout'] not in ['cutout', 'editorial', 'landscape', 'simple', 'cover', 'split', 'window', 'freeform']: raise ValueError('Unsupported layout')
     if plan['photo_mode'] not in ['cutout', 'whole']: raise ValueError('Unsupported photo_mode')
     if plan['palette'] not in PALETTES: raise ValueError('Unsupported palette')
     if type(plan['seed']) is not int: raise ValueError('seed must be an integer')
@@ -168,7 +181,16 @@ def validate_plan(plan):
     if len(plan['title']) > 3: raise ValueError('At most three title lines; use a larger layout for longer formal copy')
     if plan['category'] in ['group', 'landscape'] and plan['photo_mode'] != 'whole': raise ValueError('Groups and landscapes must stay whole')
     if plan['layout'] == 'cutout' and plan['photo_mode'] != 'cutout': raise ValueError('cutout layout requires cutout photo')
+    if plan['layout'] in ['window','freeform'] and plan['photo_mode']!='whole': raise ValueError('window/freeform requires whole photo mode')
     if plan.get('tone', 'color') not in ['color', 'mono']: raise ValueError('tone must be color or mono')
+    policy=plan.get('subject_policy','preserve')
+    if policy not in ['preserve','creative']: raise ValueError('subject_policy must be preserve or creative')
+    if plan['layout']=='freeform' and policy!='creative': raise ValueError('freeform requires creative policy and an actual generated artwork')
+    if policy=='creative':
+        if plan['layout']!='freeform': raise ValueError('Creative poster edits use freeform layout')
+        for key in ['allowed_changes','keep_features']:
+            if not isinstance(plan.get(key),list) or not plan[key] or any(not isinstance(s,str) or not s.strip() for s in plan[key]):
+                raise ValueError('Creative policy requires explicit '+key)
     if plan.get('formal_copy') is not None:
         visible = ''.join(plan['title']) + plan['subtitle']
         for phrase in plan['formal_copy']:
@@ -205,7 +227,7 @@ def prepare_photo(source, dest, plan):
     return photo, mask_info, unchanged_rgb
 
 
-def place_photo(c, photo, area, angle=0, cutout=False):
+def place_photo(c, photo, area, angle=0, cutout=False, border=17):
     cx, cy, bw, bh = area
     if cutout:
         box = photo.getchannel('A').getbbox()
@@ -221,7 +243,7 @@ def place_photo(c, photo, area, angle=0, cutout=False):
     mounted = Image.new('RGBA', (target[0]+pad*2, target[1]+pad*2))
     if cutout:
         a = Image.new('L', mounted.size); a.paste(resized.getchannel('A'), (pad, pad))
-        a = a.filter(ImageFilter.MaxFilter(35))
+        a = a.filter(ImageFilter.MaxFilter(border))
         paper = texture(mounted.size, c.palette['paper'], c.seed + 201)
         paper.putalpha(a); mounted.alpha_composite(paper)
     else:
@@ -263,14 +285,63 @@ def draw_title(c, plan, top=115, max_height=280, strip=False):
             c.text(line,center,1050,line_h-8,p['ink'] if plan['palette']=='archive' else p['paper'],heavy=True,max_size=int(line_h))
 
 
+def editorial_layout(c, plan, photo):
+    """Three composition grammars: cover, side column, and photographic spread.
+
+    These are original implementations. Main text and photo occupy disjoint
+    regions; decorative background type can sit behind the photographic layer.
+    """
+    p=c.palette;layout=plan['layout']
+    light=plan['palette'] in ['archive','cobalt']
+    ink=p['ink'] if light else p['paper']
+    if layout=='cover':
+        c.paper((750,1030),(745,905),p['accent'],'color_field',angle=-8)
+        c.paper((460,370),(298,1115),p['second'],'small_field',angle=9)
+        if plan.get('motif'):
+            c.text(plan['motif'],(595,535),1080,220,p['second'],latin=True,max_size=210,angle=-5,role='text_motif')
+        # Size is based on actual copy; different line lengths produce hierarchy.
+        for i,line in enumerate(plan['title']):
+            im,size=fit_text(line,1050,310/len(plan['title']),ink,heavy=True,max_size=220)
+            c.add(im,(65+im.width/2,135+i*310/len(plan['title'])+im.height/2),'text_title',protected=True)
+            c.checks.append({'name':'title_readable_size','pass':size>=24,'font_size':size,'text':line})
+        place_photo(c,photo,(658,960,970,910),angle=2,cutout=plan['photo_mode']=='cutout')
+        c.paper((850,116),(501,1450),p['paper'],'caption_strip',angle=-3)
+        c.text(plan['subtitle'],(501,1450),780,70,p['ink'],max_size=48,angle=-3,role='text_subtitle')
+    elif layout=='split':
+        c.paper((690,1060),(814,871),p['accent'],'color_field',angle=-3)
+        c.paper((530,800),(839,908),p['paper'],'backing_stock',angle=5,ruled=True)
+        for i,line in enumerate(plan['title']):
+            c.text(line,(252,333+i*185),350,165,ink,heavy=True,max_size=165)
+        if plan.get('motif'):
+            c.text(plan['motif'],(788,238),670,120,p['second'],latin=True,max_size=115,angle=-2,role='text_motif')
+        place_photo(c,photo,(808,911,655,1050),angle=-2,cutout=plan['photo_mode']=='cutout')
+        c.paper((1040,110),(590,1463),p['paper'],'caption_strip',angle=0)
+        c.text(plan['subtitle'],(590,1463),950,65,p['ink'],max_size=48,role='text_subtitle')
+    elif layout=='window':
+        c.paper((1090,690),(611,590),p['accent'],'color_field',angle=3)
+        c.paper((1050,670),(579,600),p['paper'],'backing_stock',angle=-3)
+        place_photo(c,photo,(600,590,1080,675),angle=0,cutout=False)
+        c.tape((230,280),-15)
+        if plan.get('motif'):
+            c.text(plan['motif'],(600,1040),1060,145,p['accent'],latin=True,max_size=145,role='text_motif')
+        for i,line in enumerate(plan['title']):
+            im,size=fit_text(line,1050,275/len(plan['title']),ink,heavy=True,max_size=170)
+            c.add(im,(70+im.width/2,1110+i*275/len(plan['title'])+im.height/2),'text_title',protected=True)
+            c.checks.append({'name':'title_readable_size','pass':size>=24,'font_size':size,'text':line})
+        c.text(plan['subtitle'],(600,1480),1050,65,ink,max_size=44,role='text_subtitle')
+
+
 def compose(dest, plan, photo):
     p=PALETTES[plan['palette']];seed=plan['seed']; c=Canvas(dest,p,seed)
     layout=plan['layout']
     # Small quiet folio; creative text is explicitly part of the Agent's plan.
     label=plan.get('eyebrow','PAPER / MOMENTS')
-    c.text(label,(240,56),350,38,p['ink'] if plan['palette']=='archive' else p['paper'],latin=True,max_size=33,role='text_eyebrow')
-    c.text(plan.get('edition','A MOMENT, KEPT'),(963,56),350,38,p['ink'] if plan['palette']=='archive' else p['paper'],latin=True,max_size=28,role='text_edition')
-    if layout == 'cutout':
+    folio_ink=p['ink'] if plan['palette'] in ['archive','cobalt'] else p['paper']
+    if label: c.text(label,(240,56),350,38,folio_ink,latin=True,max_size=33,role='text_eyebrow')
+    if plan.get('edition','A MOMENT, KEPT'): c.text(plan.get('edition','A MOMENT, KEPT'),(963,56),350,38,folio_ink,latin=True,max_size=28,role='text_edition')
+    if layout in ['cover','split','window']:
+        editorial_layout(c,plan,photo)
+    elif layout == 'cutout':
         draw_title(c,plan,112,260,strip=True)
         c.paper((700,795),(589,865),p['paper'],'backing_grid',angle=7,grid=True)
         c.paper((730,660),(622,941),p['accent'],'backing_color',angle=-7)
@@ -315,28 +386,69 @@ def compose(dest, plan, photo):
     return c
 
 
-def make_bundle(source, plan, dest):
+def creative_canvas(source, plan, dest, artwork, provenance):
+    """Import an actual host-generated poster, retaining the exact original.
+
+    The image is a flattened generated layer, not a claim of editable paper
+    layers or unchanged source pixels. Never resize a square into a portrait.
+    """
+    if plan['layout']!='freeform': raise ValueError('Creative artwork requires freeform layout')
+    if not artwork or not provenance: raise ValueError('Creative artwork and provenance must both be provided')
+    meta=read_json(provenance)
+    if meta.get('permission')!='user_selected_creative': raise ValueError('Creative mode requires a recorded user choice')
+    if not isinstance(meta.get('prompt'),str) or not meta['prompt'].strip(): raise ValueError('Save the actual generation prompt')
+    if not isinstance(meta.get('model'),str) or not meta['model'].strip(): raise ValueError('Save the actual model/tool name')
+    im=ImageOps.exif_transpose(Image.open(artwork)).convert('RGBA')
+    if im.size!=(W,H): raise ValueError('Creative artwork must be 1200x1600; request 3:4 or explicitly recompose, never stretch')
+    original=ImageOps.exif_transpose(Image.open(source)).convert('RGB')
+    original.save(dest/'source-normalized.png')
+    shutil.copyfile(source,dest/('source-original'+source.suffix.lower()))
+    write_json(dest/'source.json',{'original_filename':source.name,'sha256':digest(source),'size':list(original.size)})
+    shutil.copyfile(artwork,dest/'generated-artwork.png')
+    # Only the fields needed to reproduce the edit enter the user bundle.
+    write_json(dest/'generation.json',{'model':meta['model'],'prompt':meta['prompt'],'permission':meta['permission'],
+        'parameters':{k:meta.get('parameters',{}).get(k) for k in ['size','quality','output_format']},
+        'allowed_changes':plan['allowed_changes'],'keep_features':plan['keep_features'],
+        'source_sha256':digest(source),'artwork_sha256':digest(artwork),
+        'imported_dimensions':list(im.size),'pixel_preserving':False,'editable_internal_layers':False})
+    im.save(dest/'photo-prepared.png')
+    write_json(dest/'photo-processing.json',{'generative_subject_edit':True,'rgb_matches_allowed_transform':None,
+        'note':'Creative model edit. Compare identity, features and anatomy visually; source-pixel preservation is not claimed.'})
+    c=Canvas(dest,PALETTES[plan['palette']],plan['seed'])
+    c.add(im,(W//2,H//2),'generated_poster',protected=True)
+    c.image.convert('RGB').save(dest/'final.png')
+    return c,{'used':'host_generated_artwork','warning':'Identity and text require visual inspection.'}
+
+
+def make_bundle(source, plan, dest, artwork=None, provenance=None):
     dest.mkdir(parents=True, exist_ok=False)
     validate_plan(plan)
     write_json(dest/'plan.json',plan)
-    photo,mask,unchanged=prepare_photo(source,dest,plan)
-    c=compose(dest,plan,photo)
+    creative=plan.get('subject_policy','preserve')=='creative'
+    if creative:
+        c,mask=creative_canvas(source,plan,dest,artwork,provenance)
+        fidelity_checks=[{'name':'creative_edit_disclosed','pass':True,'evidence':'generation.json; original photo retained. Source RGB equality is not applicable.'}]
+    else:
+        if artwork or provenance: raise ValueError('Preserve mode cannot import generated artwork')
+        photo,mask,unchanged=prepare_photo(source,dest,plan)
+        c=compose(dest,plan,photo)
+        fidelity_checks=[{'name':'source_rgb_matches_allowed_transform','pass':bool(unchanged)},
+            {'name':'source_not_regenerated','pass':True,'evidence':'Local RGB source -> optional grayscale -> alpha mask -> similarity transforms only'}]
     fonts=dest/'fonts';shutil.copytree(SKILL/'assets/fonts',fonts)
     # Save exact compositor and replay helper so the result survives later skill updates.
     shutil.copyfile(Path(__file__),dest/'renderer.py')
     shutil.copyfile(SKILL/'scripts/replay.py',dest/'replay.py')
     with Image.open(dest/'final.png') as final_image:
         valid_dimensions = final_image.size == (1200,1600)
-    hard=c.checks + [
-        {'name':'source_rgb_matches_allowed_transform','pass':bool(unchanged)},
-        {'name':'source_not_regenerated','pass':True,'evidence':'Local RGB source -> optional grayscale -> alpha mask -> similarity transforms only'},
-        {'name':'group_landscape_whole','pass':plan['category'] not in ['group','landscape'] or plan['photo_mode']=='whole'},
+    if not creative:
+        fidelity_checks.append({'name':'group_landscape_whole','pass':plan['category'] not in ['group','landscape'] or plan['photo_mode']=='whole'})
+    hard=c.checks + fidelity_checks + [
         {'name':'png_3_4','pass':valid_dimensions},
     ]
     files={str(p.relative_to(dest)):digest(p) for p in dest.rglob('*') if p.is_file()}
-    record={'version':1,'canvas':[W,H],'layers':c.layers,'files':files,'runtime':{'python':platform.python_version(),'pillow':PIL_VERSION,'numpy':np.__version__,'platform':platform.platform()},'mask':mask,'photo_boxes':c.photo_boxes,'text_boxes':c.text_boxes,'requires_visual_review':REVIEW_KEYS}
+    record={'version':2,'subject_policy':plan.get('subject_policy','preserve'),'editable_internal_layers':not creative,'canvas':[W,H],'layers':c.layers,'files':files,'runtime':{'python':platform.python_version(),'pillow':PIL_VERSION,'numpy':np.__version__,'platform':platform.platform()},'mask':mask,'photo_boxes':c.photo_boxes,'text_boxes':c.text_boxes,'requires_visual_review':REVIEW_KEYS+(['identity_recognizable','no_subject_artifacts','changes_within_permission'] if creative else [])}
     write_json(dest/'record.json',record)
-    write_json(dest/'checks.json',{'all_hard_checks_pass':all(x['pass'] for x in hard),'checks':hard,'limitations':['Mask completeness, semantic correctness, readable rendered glyphs, aesthetics and subject occlusion require Agent visual review.','Source RGB checks establish allowed processing, not complete preservation of the alpha-masked subject.']})
+    write_json(dest/'checks.json',{'subject_policy':plan.get('subject_policy','preserve'),'all_hard_checks_pass':all(x['pass'] for x in hard),'checks':hard,'limitations':['Mask completeness, identity, anatomy, rendered text, aesthetics and subject occlusion require actual visual review.','Creative mode does not prove source fidelity; preserve-mode RGB checks do not prove mask completeness.']})
     tool=os.environ.get('VISUAL_SKILLS_VISION')
     if tool:
         try:
@@ -356,23 +468,26 @@ def render(args):
     # Keep source at the run root to ensure later attempts always return to the original photograph.
     original=root/('original'+source.suffix.lower());shutil.copyfile(source,original)
     state={'version':1,'created_at':datetime.now(timezone.utc).isoformat(),'source':original.name,'source_sha256':digest(original),'category':plan['category'],'attempts':[],'status':'needs_review','human_acceptance':'pending'}
-    perform_attempt(root,state,plan)
+    artwork=Path(args.artwork).resolve() if getattr(args,'artwork',None) else None
+    provenance=Path(args.provenance).resolve() if getattr(args,'provenance',None) else None
+    perform_attempt(root,state,plan,artwork,provenance)
 
 
-def perform_attempt(root,state,plan):
+def perform_attempt(root,state,plan,artwork=None,provenance=None):
     n=len(state['attempts'])
     if n>2:raise ValueError('Repair budget exhausted; start a separately labeled development run for changed code')
     if n==2:
-        plan=dict(plan,layout='simple',photo_mode='whole')
+        plan=dict(plan,layout='simple',photo_mode='whole',subject_policy='preserve')
+        artwork=provenance=None
     elif plan['layout']=='simple':
         raise ValueError('Simple fallback is reserved for attempt 2')
     source=root/state['source']
     if digest(source)!=state['source_sha256']:raise ValueError('Original photo changed since first attempt')
     if plan['category']!=state['category']:raise ValueError('Category cannot change during repair')
     dest=root/f'attempt-{n}'
-    attempt={'index':n,'layout':plan['layout'],'photo_mode':plan['photo_mode'],'bundle':dest.name,'status':'needs_review'}
+    attempt={'index':n,'layout':plan['layout'],'photo_mode':plan['photo_mode'],'subject_policy':plan.get('subject_policy','preserve'),'bundle':dest.name,'status':'needs_review'}
     try:
-        result=make_bundle(source,plan,dest)
+        result=make_bundle(source,plan,dest,artwork,provenance)
         attempt['hard_pass']=result['hard_pass']
     except Exception as error:
         attempt['status']='error';attempt['error']=str(error)
@@ -390,7 +505,11 @@ def repair(args):
     previous_path=root/state['attempts'][-1]['bundle']/'plan.json'
     previous=read_json(previous_path)
     if plan.get('formal_copy')!=previous.get('formal_copy'):raise ValueError('Formal copy cannot change during repair')
-    perform_attempt(root,state,plan)
+    if plan.get('subject_policy','preserve')!=previous.get('subject_policy','preserve'):
+        raise ValueError('Keep the selected subject policy during repair; final fallback restores the original')
+    artwork=Path(args.artwork).resolve() if getattr(args,'artwork',None) else None
+    provenance=Path(args.provenance).resolve() if getattr(args,'provenance',None) else None
+    perform_attempt(root,state,plan,artwork,provenance)
 
 
 def review(args):
@@ -399,10 +518,14 @@ def review(args):
     data=read_json(args.review)
     for key in REVIEW_KEYS:
         if type(data.get(key)) is not bool:raise ValueError('Review must explicitly provide boolean '+key)
+    creative=state['attempts'][-1].get('subject_policy')=='creative'
+    creative_keys=['identity_recognizable','no_subject_artifacts','changes_within_permission'] if creative else []
+    for key in creative_keys:
+        if type(data.get(key)) is not bool:raise ValueError('Creative review must provide boolean '+key)
     if not isinstance(data.get('notes'),str) or not data['notes'].strip():raise ValueError('Visual review needs concrete notes')
     if not data.get('reviewer'):raise ValueError('Review must name the reviewer')
     attempt=state['attempts'][-1];dest=root/attempt['bundle']
-    passed=bool(attempt['hard_pass']) and all(data[k] for k in REVIEW_KEYS)
+    passed=bool(attempt['hard_pass']) and all(data[k] for k in REVIEW_KEYS+creative_keys)
     write_json(dest/'visual-review.json',data)
     attempt['status']='passed' if passed else 'rejected'
     if passed:
@@ -419,7 +542,9 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     sub=parser.add_subparsers(dest='command',required=True)
     p=sub.add_parser('render');p.add_argument('--input',required=True);p.add_argument('--plan',required=True);p.add_argument('--output',required=True);p.set_defaults(func=render)
+    p.add_argument('--artwork');p.add_argument('--provenance')
     p=sub.add_parser('repair');p.add_argument('--run',required=True);p.add_argument('--plan',required=True);p.set_defaults(func=repair)
+    p.add_argument('--artwork');p.add_argument('--provenance')
     p=sub.add_parser('review');p.add_argument('--run',required=True);p.add_argument('--review',required=True);p.set_defaults(func=review)
     args=parser.parse_args()
     try:args.func(args)

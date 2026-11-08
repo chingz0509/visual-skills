@@ -27,7 +27,7 @@ def package(destination=None):
         raise ValueError('Publication scan blocked package: ' + '; '.join(f'{name}: {reason}' for name, reason in findings))
     destination = Path(destination) if destination else ROOT / 'dist'
     destination.mkdir(parents=True, exist_ok=True)
-    out = destination / 'visual-skills-0.1.0-experimental.zip'
+    out = destination / 'visual-skills-0.2.0-preview.zip'
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
         for file in sorted(files):
             # Fixed metadata avoids embedding local timestamps, owners or permissions.
