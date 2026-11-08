@@ -1,0 +1,101 @@
+{
+  "selected_on": "2026-11-09",
+  "purpose": "Curated visual showcase, not a photo-preservation benchmark",
+  "items": [
+    {
+      "file": "portrait.jpg",
+      "title": "不必乖乖入框",
+      "kind": "photo_edit",
+      "model": "gpt-image-2",
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "sha256": "03521b1ec0c2323484c8fc8913bba0761b669fe7f0479c2bf24cab3d393c7e63",
+      "selected_by_user": "2026-11-09",
+      "source_case": "person-easy",
+      "source_url": "https://www.pexels.com/photo/woman-wearing-black-spaghetti-strap-top-415829/",
+      "generation_record": "../v0.2.0-preview/portrait.json"
+    },
+    {
+      "file": "kitten.jpg",
+      "title": "今天只管可爱",
+      "kind": "generated_concept",
+      "model": "gpt-image-2",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sha256": "622bdf16d0dbb2bb7605ec78d23c16790368e3836b7973664042c0b2b1655d64",
+      "selected_by_user": "2026-11-09",
+      "source_photo": null,
+      "prompt": "Use case: stylized-concept / ads-marketing.\nCreate one finished 3:4 vertical photographic paper-collage poster for an experimental visual-skills style showcase. This is a newly generated fictional demonstration, not a before/after or proof of preserving an uploaded photo.\nMake a sophisticated publishable independent music / cultural magazine design: one clear photographic focal point, editorial Chinese typography, purposeful paper overlaps, tactile fibrous torn edges, fine analog print grain and shallow contact shadows. Balance visible hierarchy and breathing room. Photographic subject, not drawing, 3D cartoon or digital painting. Do not recycle a centered white outlined cutout on graph paper. Do not use the same title-at-top/photo-in-frame/bottom-caption template. No generic floating stars, no thick sticker bevels.\nSpecific design:\nOne photographic ginger kitten with blue eyes, pink nose, exactly two ears and two visible front paws, sitting naturally. Warm printed fur detail, plausible anatomy. Tomato-red paper background and oversized buttery-yellow irregular torn circular paper field rising from bottom left. Large kitten clipping lower right, huge playful black Chinese headline upper left with uneven baselines. Small lilac torn scrap holds the English at lower left. Exactly one short cobalt crayon loop. Thin cream torn edge around fur, soft contact shadow; no cartoon rendering or repeated icons.\nExact text only, verbatim, no additional text:\nChinese headline line 1: 今天\nChinese headline line 2: 只管可爱\nSmall English accent: SMALL PAWS / BIG MOOD\nRender every Chinese character correctly and completely, readable at thumbnail size, all text safely inside the poster. Keep subject faces, eyes and key product details uncovered. No invented brands, dates, prices, signatures, watermarks, QR codes, URLs or calls to contact anyone. No scene mockup, wall, surrounding frame, side-by-side comparison or multi-panel sheet. Fill the image with the single finished poster.\n",
+      "parameters": {
+        "size": "1200x1600",
+        "quality": "high",
+        "output_format": "png"
+      },
+      "source_identity_preservation_test": false
+    },
+    {
+      "file": "flowers.jpg",
+      "title": "把普通日子过成花期",
+      "kind": "generated_concept",
+      "model": "gpt-image-2",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sha256": "4bc6f68ab8159fa21a6941e4865b3a34676a8f1c2372b2ec35c1ccf9ca72183e",
+      "selected_by_user": "2026-11-09",
+      "source_photo": null,
+      "prompt": "Use case: stylized-concept / ads-marketing.\nCreate one finished 3:4 vertical photographic paper-collage poster for an experimental visual-skills style showcase. This is a newly generated fictional demonstration, not a before/after or proof of preserving an uploaded photo.\nMake a sophisticated publishable independent music / cultural magazine design: one clear photographic focal point, editorial Chinese typography, purposeful paper overlaps, tactile fibrous torn edges, fine analog print grain and shallow contact shadows. Balance visible hierarchy and breathing room. Photographic subject, not drawing, 3D cartoon or digital painting. Do not recycle a centered white outlined cutout on graph paper. Do not use the same title-at-top/photo-in-frame/bottom-caption template. No generic floating stars, no thick sticker bevels.\nSpecific design:\nPhotographic pale yellow tulips with green stems, a simple loosely tied bouquet with no hands and no vase. Natural complete flowerheads; clipping enters diagonally from lower left toward upper right. Lavender risograph paper backdrop, torn warm-ivory irregular strip beneath, dark aubergine Chinese typography oversized in two dissimilar line widths at upper left, small English on a butter-yellow lower-right scrap. One loose curved graphite line relates to stems. Restrained lilac, pale yellow and green; fine print misregistration on paper only, clear flowers. Airy literary editorial collage, rich physical paper texture, no photoframe.\nExact text only, verbatim, no additional text:\nChinese headline line 1: 把普通日子\nChinese headline line 2: 过成花期\nSmall English accent: A LITTLE BLOOM\nRender every Chinese character correctly and completely, readable at thumbnail size, all text safely inside the poster. Keep subject faces, eyes and key product details uncovered. No invented brands, dates, prices, signatures, watermarks, QR codes, URLs or calls to contact anyone. No scene mockup, wall, surrounding frame, side-by-side comparison or multi-panel sheet. Fill the image with the single finished poster.\n",
+      "parameters": {
+        "size": "1200x1600",
+        "quality": "high",
+        "output_format": "png"
+      },
+      "source_identity_preservation_test": false
+    },
+    {
+      "file": "fashion.jpg",
+      "title": "穿自己喜欢的",
+      "kind": "generated_concept",
+      "model": "gpt-image-2",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sha256": "a164212b1e9744628e53d5291c9e24c2c031ea97d68e97cdb9086683ce765cca",
+      "selected_by_user": "2026-11-09",
+      "source_photo": null,
+      "prompt": "Use case: stylized-concept / ads-marketing.\nCreate one finished 3:4 vertical photographic paper-collage poster for an experimental visual-skills style showcase. This is a newly generated fictional demonstration, not a before/after or proof of preserving an uploaded photo.\nMake a sophisticated publishable independent music / cultural magazine design: one clear photographic focal point, editorial Chinese typography, purposeful paper overlaps, tactile fibrous torn edges, fine analog print grain and shallow contact shadows. Balance visible hierarchy and breathing room. Photographic subject, not drawing, 3D cartoon or digital painting. Do not recycle a centered white outlined cutout on graph paper. Do not use the same title-at-top/photo-in-frame/bottom-caption template. No generic floating stars, no thick sticker bevels.\nSpecific design:\nOne fictional adult male street-fashion subject with short curly hair, dark sunglasses, a loose cobalt bomber and wide charcoal trousers, natural standing pose with both hands in pockets. Full-body photographic black-and-white photocopy cutout at left, only jacket retains muted cobalt ink. Neon coral-red paper ground, oversized cream Chinese headline to the right in staggered chopped bold blocks, a tall rough gray torn strip behind the subject. English condensed on a small diagonally taped cream label near bottom right. One thin black hand-drawn contour echo offset from silhouette. Strong punk editorial proportions, convincing limbs, face unobscured, no brands or graffiti words.\nExact text only, verbatim, no additional text:\nChinese headline line 1: 穿自己\nChinese headline line 2: 喜欢的\nSmall English accent: NO DRESS CODE\nRender every Chinese character correctly and completely, readable at thumbnail size, all text safely inside the poster. Keep subject faces, eyes and key product details uncovered. No invented brands, dates, prices, signatures, watermarks, QR codes, URLs or calls to contact anyone. No scene mockup, wall, surrounding frame, side-by-side comparison or multi-panel sheet. Fill the image with the single finished poster.\n",
+      "parameters": {
+        "size": "1200x1600",
+        "quality": "high",
+        "output_format": "png"
+      },
+      "source_identity_preservation_test": false
+    },
+    {
+      "file": "seaside.jpg",
+      "title": "去海边发一会儿呆",
+      "kind": "generated_concept",
+      "model": "gpt-image-2",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sha256": "61eedec50c02105944720e704c9af25bbd0c8cc65ae0a67692f5541df211a701",
+      "selected_by_user": "2026-11-09",
+      "source_photo": null,
+      "prompt": "Use case: stylized-concept / ads-marketing.\nCreate one finished 3:4 vertical photographic paper-collage poster for an experimental visual-skills style showcase. This is a newly generated fictional demonstration, not a before/after or proof of preserving an uploaded photo.\nMake a sophisticated publishable independent music / cultural magazine design: one clear photographic focal point, editorial Chinese typography, purposeful paper overlaps, tactile fibrous torn edges, fine analog print grain and shallow contact shadows. Balance visible hierarchy and breathing room. Photographic subject, not drawing, 3D cartoon or digital painting. Do not recycle a centered white outlined cutout on graph paper. Do not use the same title-at-top/photo-in-frame/bottom-caption template. No generic floating stars, no thick sticker bevels.\nSpecific design:\nA single uninterrupted panoramic photographic scene of a quiet cobalt sea, a tiny off-center white building on the far coast, sunlit pale rocks and sky. Keep the photographed horizon continuous; embed the complete landscape as a broad horizontal torn-edged photograph across the center, partially layered above an ivory paper and behind a small coral torn tab. Deep marine blue at top and ivory lower area. Huge cream Chinese first line in top-left blue margin; black second line across generous bottom ivory margin. English tiny along the picture edge, readable. Visible material overlap and a single pencil wave, travel-zine collage, no people or invented signage, not a simple matted frame.\nExact text only, verbatim, no additional text:\nChinese headline line 1: 去海边\nChinese headline line 2: 发一会儿呆\nSmall English accent: DO NOTHING / FEEL EVERYTHING\nRender every Chinese character correctly and completely, readable at thumbnail size, all text safely inside the poster. Keep subject faces, eyes and key product details uncovered. No invented brands, dates, prices, signatures, watermarks, QR codes, URLs or calls to contact anyone. No scene mockup, wall, surrounding frame, side-by-side comparison or multi-panel sheet. Fill the image with the single finished poster.\n",
+      "parameters": {
+        "size": "1200x1600",
+        "quality": "high",
+        "output_format": "png"
+      },
+      "source_identity_preservation_test": false
+    }
+  ]
+}

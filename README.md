@@ -4,13 +4,21 @@
 
 自动安排标题、配色和构图。可选**保留原片**，或用你自己的图像工具做 **AI 创意改造**。当前提供「照片拼贴」。
 
-| 创意人像 | 创意宠物 |
+<p align="center">
+  <a href="examples/showcase/portrait.jpg"><img src="examples/showcase/portrait.jpg" alt="不必乖乖入框：钴蓝与米白撕纸、黑白网点人像" width="520"></a>
+</p>
+
+| 宠物 · 今天只管可爱 | 花束 · 把普通日子过成花期 |
 |---|---|
-| ![创意人像拼贴](examples/v0.2.0-preview/portrait.jpg) | ![创意宠物拼贴](examples/v0.2.0-preview/kitten.jpg) |
+| [![红黄纸张上的橘色幼猫](examples/showcase/kitten.jpg)](examples/showcase/kitten.jpg) | [![淡紫纸张上的黄色郁金香](examples/showcase/flowers.jpg)](examples/showcase/flowers.jpg) |
 
-新版实际生成案例：同一批测试照片，经 AI 创意处理。原十张案例保留在[旧版报告](benchmark/REPORT.md)。
+| 穿搭 · 穿自己喜欢的 | 风景 · 去海边发一会儿呆 |
+|---|---|
+| [![红色背景上的街头穿搭剪贴](examples/showcase/fashion.jpg)](examples/showcase/fashion.jpg) | [![深蓝纸张与海岸照片拼贴](examples/showcase/seaside.jpg)](examples/showcase/seaside.jpg) |
 
-[安装使用](#安装使用) · [全部案例](benchmark/REPORT.md) · [English](README.en.md)
+五张精选作品。人像由照片创意改造，其余四张为生成的设计展示；[查看完整作品与制作说明](examples/showcase/README.md)。
+
+[安装使用](#安装使用) · [精选作品](examples/showcase/README.md) · [旧版测试报告](benchmark/REPORT.md) · [English](README.en.md)
 
 ## 安装使用
 
@@ -54,7 +62,7 @@
 
 首个验证环境是 **Codex 桌面端 + Apple Silicon Mac**；其他环境尚未完整验证。
 
-`0.2.0-preview` 增加自由创意改造、三种本地构图和更严格的视觉检查。上方两张通过 Agent 初检，本轮用户认可展示效果；这不等于完整十张验收或通用成功率。
+`0.2.0-preview` 增加自由创意改造、三种本地构图和更严格的视觉检查。早期两张照片改造案例通过 Agent 初检，用户认可展示效果。首页展示本轮选定的五张作品；展示选图不等于完整十张验收或通用成功率。
 
 本轮相机创意测试仍因细节重绘错误失败，已保留原因。[新版验证与限制](docs/VALIDATION-0.2.md) · [旧版全部结果](benchmark/REPORT.md)
 

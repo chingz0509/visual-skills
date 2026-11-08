@@ -23,6 +23,10 @@
 
 变更包括排版、纸层、旋转缩放、轻微印刷颗粒，部分照片黑白化或抠图。全部最终和中间失败海报见 `benchmark/REPORT.md`。
 
+## 首页精选作品
+
+`examples/showcase/portrait.jpg` 是上述 `person-easy` 照片的 AI 创意改造，沿用该照片的来源与署名。`kitten.jpg`、`flowers.jpg`、`fashion.jpg`、`seaside.jpg` 为 gpt-image-2 直接生成的设计展示，没有使用输入照片。五张由项目维护者选定公开展示；生成信息见 [展示清单](examples/showcase/manifest.json)。这些作品不代表照片中人物为项目代言，展示选图也不计作照片保真测试结果。
+
 ## 字体
 
 - [Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)，Google/Adobe，SIL Open Font License 1.1。

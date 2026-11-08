@@ -4,13 +4,21 @@
 
 The agent chooses the title, colors and composition. Choose **original-photo collage** or **AI creative editing** using your own host image tool. The first style is **Photo Collage**.
 
-| Creative portrait | Creative pet |
+<p align="center">
+  <a href="examples/showcase/portrait.jpg"><img src="examples/showcase/portrait.jpg" alt="Out of the frame: monochrome portrait with cobalt and cream torn paper" width="520"></a>
+</p>
+
+| Pet · Small paws, big mood | Flowers · A little bloom |
 |---|---|
-| ![Creative portrait](examples/v0.2.0-preview/portrait.jpg) | ![Creative kitten](examples/v0.2.0-preview/kitten.jpg) |
+| [![Ginger kitten on red and yellow paper](examples/showcase/kitten.jpg)](examples/showcase/kitten.jpg) | [![Yellow tulips on lilac torn paper](examples/showcase/flowers.jpg)](examples/showcase/flowers.jpg) |
 
-Actual AI edits of the fixed test photos. Original ten outputs remain in the [legacy report](benchmark/REPORT.md).
+| Fashion · No dress code | Landscape · Do nothing, feel everything |
+|---|---|
+| [![Streetwear clipping on red paper](examples/showcase/fashion.jpg)](examples/showcase/fashion.jpg) | [![Coastal photograph with blue and cream paper layers](examples/showcase/seaside.jpg)](examples/showcase/seaside.jpg) |
 
-[中文](README.md) · [All examples](benchmark/REPORT.md)
+Five selected works. The portrait is an AI edit of a source photo; the other four are generated design demonstrations. [Full gallery and production notes](examples/showcase/README.md).
+
+[中文](README.md) · [Selected works](examples/showcase/README.md) · [Legacy test report](benchmark/REPORT.md)
 
 ## Install and use
 
